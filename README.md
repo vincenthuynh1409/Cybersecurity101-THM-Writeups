@@ -1,10 +1,10 @@
-# TryHackMe Lab Notes
+# TryHackMe Lab Notes & Write-Ups
 
 ## Description:
 
 ### 👋 Introduction:
 
-Yoo, this repository contains my notes, lab walkthroughs, and learning progress from completing TryHackMe rooms. It serves as a personal knowledge base to reinforce cybersecurity concepts, document hands-on exercises, and document my ongoing learning journey in networking, Linux, security fundamentals, and offensive and defensive cybersecurity :D
+Yoo, this repository contains my notes, write-ups, lab walkthroughs, and learning progress from completing TryHackMe rooms. It serves as a personal knowledge base to reinforce cybersecurity concepts, document hands-on exercises, and document my ongoing learning journey in networking, Linux, security fundamentals, and offensive and defensive cybersecurity :D
 
 ### 🗺️ Navigation:
 
