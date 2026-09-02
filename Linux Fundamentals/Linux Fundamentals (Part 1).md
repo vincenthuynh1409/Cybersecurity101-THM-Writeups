@@ -51,6 +51,8 @@ Q1) *"I've deployed my machine and am ready to go"*
 
 **ANSWER:** no answer needed.
 
+<br>
+
 ## Talking to Linux
 
 ### Who are you in this machine?
@@ -79,13 +81,15 @@ Using `echo` is just the start of a very important skill in Cyber security: be
 
 Task 2:
 
-1) *"What command would we use to find out who we are on the system?"*
+Q1) *"What command would we use to find out who we are on the system?"*
 
 **ANSWER:** `whoami`
 
-2) *"What command would we use to output some text?"*
+Q2) *"What command would we use to output some text?"*
 
 **ANSWER:** `echo`
+
+<br>
 
 ## Finding Your Way Around
 
@@ -130,6 +134,8 @@ Q3) *"Use `cat` to read the file within this folder. What does it say?"*
 
 
 **ANSWER:** `password123`
+
+<br>
 
 ## Let the Machine Do the Searching
 
