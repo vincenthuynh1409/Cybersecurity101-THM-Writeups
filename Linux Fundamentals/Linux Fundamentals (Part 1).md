@@ -150,6 +150,8 @@ Q1) *"After using `grep "THM" access.log` a flag was found. What is the flag?"
 
 **ANSWER:** `THM{ACCESS}`
 
+<br>
+
 ## Shell Operators (Combining Commands)
 
 In Linux, there are a set of special characters that can combine commands together. 
