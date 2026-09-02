@@ -1,4 +1,4 @@
-# TryHackMe Lab Notes & Write-Ups
+# Cybersecurity 101 TryHackMe Write-Ups
 
 ## Description:
 
