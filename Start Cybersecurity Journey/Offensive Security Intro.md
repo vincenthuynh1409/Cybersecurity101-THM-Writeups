@@ -3,6 +3,8 @@
 **Offensive Security** is about thinking like an attacker to find weaknesses before real hackers do.
 - basically simulating a hacker's actions to find weaknesses!
 
+<br>
+
 ## Practical Lab:
 
 Task 2:
