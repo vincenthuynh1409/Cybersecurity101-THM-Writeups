@@ -1,3 +1,5 @@
+# Defensive Security Intro
+
 **Defensive security** is the process of defending and securing devices and systems.
 - Before you can defend a system, you need to understand what defenders are responsible for. 
 - Defensive security focuses on detecting and investigating attacks, and responding before damage occurs.
