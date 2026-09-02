@@ -11,7 +11,7 @@ Task 2:
 
 <img width="513" height="412" alt="image" src="https://github.com/user-attachments/assets/5943cbe2-5ac2-4630-a819-810c03c45bf6" />
 
-*What is the bank account number in the FakeBank application?*
+Q1) *What is the bank account number in the FakeBank application?*
 
 **ANSWER:** 8881
 
@@ -33,7 +33,7 @@ Dirb will find two URLs:
 <img width="467" height="354" alt="image" src="https://github.com/user-attachments/assets/f26bdffa-4751-4019-a504-afcf73d239ce" />
 
 
-*Dirb found one URL, `http://fakebank.thm/images`.*  
+Q1) *Dirb found one URL, `http://fakebank.thm/images`.*  
 *What is the other hidden URL?*
 
 **ANSWER:** `http://fakebank.thm/bank-tranfer`
@@ -41,9 +41,9 @@ Dirb will find two URLs:
 ---
 Task 4:
 
-You should now have found a hidden admin panel that lets you add money to your account (which was `http://fakebank.thm/bank-tranfer`)
+Q1) *You should now have found a hidden admin panel that lets you add money to your account (which was `http://fakebank.thm/bank-tranfer`)*
 
-"Use your account number 8881 and deposit $2000 (or more). After depositing, return to your account page and confirm the balance is now positive."
+*"Use your account number 8881 and deposit $2000 (or more). After depositing, return to your account page and confirm the balance is now positive."*
 
 1. Add `/bank-tranfer` to `http://fakebank.thm` to access the admin portal page:
 
