@@ -167,6 +167,8 @@ From being able to combine commands to doing what's called a **redirection** - s
 > For example, `echo hey > welcome` makes a file named `welcome` containing "hey" in it's contents. 
 > We can use `cat welcome` to verify that it worked.
 
+Task 5:
+
 Q1) *"What operator waits for the first command to finish before running the next command?"*
 
 **ANSWER:** `&&`
