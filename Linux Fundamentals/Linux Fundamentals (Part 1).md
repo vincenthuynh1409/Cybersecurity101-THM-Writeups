@@ -81,11 +81,11 @@ Task 2:
 
 1) *"What command would we use to find out who we are on the system?"*
 
-ANSWER: `whoami`
+**ANSWER:** `whoami`
 
 2) *"What command would we use to output some text?"*
 
-ANSWER: `echo`
+**ANSWER:** `echo`
 
 ## Finding Your Way Around
 
