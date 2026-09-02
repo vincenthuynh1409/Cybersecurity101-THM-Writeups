@@ -136,6 +136,7 @@ Q3) *"Use `cat` to read the file within this folder. What does it say?"*
 | `find` | search for files by their name. For example, `find -name passwords.txt`     |
 | ------ | --------------------------------------------------------------------------- |
 | `grep` | searches _inside_ for text. For example, `grep "password123" passwords.txt` |
+
 Task 4: 
 
 Q1) *"After using `grep "THM" access.log` a flag was found. What is the flag?"*
