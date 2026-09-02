@@ -5,6 +5,8 @@
 - Defensive security focuses on detecting and investigating attacks, and responding before damage occurs.
 - Unlike offensive security, you do not attack systems, instead, you monitor and protect them.
 
+<br>
+
 ## Practical Lab:
 
 Task 2:
