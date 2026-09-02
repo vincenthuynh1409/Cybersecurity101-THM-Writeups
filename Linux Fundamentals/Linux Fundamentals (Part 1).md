@@ -24,21 +24,26 @@ For the rest of the TryHackMe rooms (which use lab machines), I have already set
 2. Downloaded configuration file (UDP)
 3. In my Kali Linux terminal: `$ openvpn [filename].ovpn` (make sure to keep terminal open)
 
-![[Pasted image 20260902174412.png]]
+<img width="526" height="720" alt="image" src="https://github.com/user-attachments/assets/51aac8c8-3b4a-41c3-b6ec-8160f62e58ed" />
+
 
 4. On the TryHackMe room, deploy a lab machine, wait for an IP address to show up. (For example: `10.66.142.126`)
 5. Go to Kali terminal, type `$ ping [IP_address]` (EX: `$ ping 10.66.142.126`)
 6. There should be packets going through, showing that the two machines can hear each other!
 
-![[Pasted image 20260902174513.png]]
+<img width="496" height="213" alt="image" src="https://github.com/user-attachments/assets/06d51882-438e-4f5b-9abb-a091e5d944db" />
+
 
 7. Now, to connect to the actual lab machine of the room: `$ ssh tryhackme@[IP_address]` > type "yes" for fingerprint > type `tryhackme` for the fingerprint password.
 
-![[Pasted image 20260902174622.png]]
+<img width="951" height="747" alt="image" src="https://github.com/user-attachments/assets/a75433bd-8002-4f8e-8ef0-9746bc684d29" />
+
+
 8. Finally, you should be in `tryhackme@linux1:~$ `
 
-![[Pasted image 20260902174656.png]]
+<img width="943" height="823" alt="image" src="https://github.com/user-attachments/assets/1a5115b9-107e-441f-951e-f68e56310749" />
 
+> At the bottom :)
 
 Task 1:
 
@@ -99,7 +104,9 @@ Q1) *"Run `ls` in the current folder. How many folders are there?"*
 1. type `$ ls` in Kali Linux terminal
 2. Count # of folders
 
-![[Pasted image 20260902175303.png]]
+<img width="678" height="121" alt="image" src="https://github.com/user-attachments/assets/f39cdd9d-fef7-4da7-a4ae-623667951570" />
+
+
 **ANSWER:** 4
 
 Q2) *"One of those folders contains a file. Which folder is it?"*
@@ -108,7 +115,8 @@ Q2) *"One of those folders contains a file. Which folder is it?"*
 
 > Note: doing `cd` while in a folder changes your directory to home directory!
 
-![[Pasted image 20260902175619.png]]
+<img width="615" height="426" alt="image" src="https://github.com/user-attachments/assets/bc5e2cd2-3da7-4cd1-a3e6-28b6def9a882" />
+
 
 **ANSWER:** `folder1`
 
@@ -118,7 +126,8 @@ Q3) *"Use `cat` to read the file within this folder. What does it say?"*
 2. `cat access.log` (useless)
 3. `cat passwords.txt` (we get the flag!)
 
-![[Pasted image 20260902175920.png]]
+<img width="952" height="541" alt="image" src="https://github.com/user-attachments/assets/910205e1-73ff-43f8-9651-040de91af64a" />
+
 
 **ANSWER:** `password123`
 
@@ -135,7 +144,8 @@ Q1) *"After using `grep "THM" access.log` a flag was found. What is the flag?"
 2. type in `grep "THM" access.log`
 3. find and copy the `THM{...}` output that has been found
 
-![[Pasted image 20260902180627.png]]
+<img width="1039" height="154" alt="image" src="https://github.com/user-attachments/assets/e44505a7-1511-45b7-bd0e-56bac8fc7049" />
+
 
 **ANSWER:** `THM{ACCESS}`
 
