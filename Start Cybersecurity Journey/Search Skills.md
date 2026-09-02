@@ -100,8 +100,6 @@ Each major security tool or platform provides its own documentation, which is th
 
 When you're troubleshooting unexpected behavior or trying to understand how to use a tool in a certain way, the official documentation should always be your first stop - not your last.
 
-<br>
-
 ### Linux "Man" Pages
 
 Have you ever come across a command-line tool or command that you're not familiar with? 
@@ -142,6 +140,8 @@ Task 5:
 
 
 **ANSWER:** `nc host.example.com 42`
+
+<br>
 
 ## GitHub
 
