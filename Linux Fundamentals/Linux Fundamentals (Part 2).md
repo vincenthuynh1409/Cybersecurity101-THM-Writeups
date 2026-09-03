@@ -15,6 +15,8 @@ Q1) *"Let's proceed!"*
 
 **ANSWER:** No Answer Needed
 
+<b>
+
 ## Accessing Your Linux Machine Using SSH
 
 ### What is SSH & how Does it Work?
