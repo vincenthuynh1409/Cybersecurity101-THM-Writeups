@@ -5,9 +5,9 @@
 
 It's fair to say that Linux is a lot more intimidating to approach than Operating System's (OSs) such as Windows. Both variants have their own advantages and disadvantages. 
 
-For example, Linux is considerably much more lightweight and you'd be surprised to know that there's a good chance you've used Linux in some form or another every day! 
+For example, Linux is considerably much more **lightweight** and you'd be surprised to know that there's a good chance you've used Linux in some form or another every day! 
 
-Linux powers things such as:
+**Linux powers things such as:**
 - Websites that you visit
 - Car entertainment/control panels
 - Point of Sale (PoS) systems such as checkout tills and registers in shops
@@ -17,7 +17,7 @@ Linux powers things such as:
 
 ### Deploying your first Linux machine
 
-For the rest of the TryHackMe rooms (which use lab machines), I have already set up my own Kali Linux Virtual Machine (Oracle VirtualBox VM).
+For the rest of the TryHackMe rooms (which use lab machines), I have already set up my own **Kali Linux Virtual Machine (Oracle VirtualBox VM).**
 
 **How did I connect?**
 1. On the TryHackMe website, click your profile picture  > `Manage Account` > `VM and VPN Settings` > scroll down to `openVPN`
