@@ -15,7 +15,7 @@ Q1) *"Let's proceed!"*
 
 **ANSWER:** No Answer Needed
 
-<b>
+<br>
 
 ## Accessing Your Linux Machine Using SSH
 
@@ -40,9 +40,12 @@ Q1) *"I've logged into the Linux Fundamentals Part 2 machine using SSH!"*
 4. You're in.
 
 
-![[Pasted image 20260903164414.png]]
+<img width="567" height="714" alt="image" src="https://github.com/user-attachments/assets/abcfaa7c-5dc4-4a65-b51b-027d44ae1b84" />
+
 
 **ANSWER:** No answer needed
+
+<br>
 
 ## Introduction to Flags and Switches
 
@@ -170,6 +173,8 @@ Q3) *"What flag would we use to display the output in a "human-readable" way?"*
 
 **ANSWER:** `-h`
 
+<br>
+
 ## Filesystem Interaction Continued
 
 ### Filesystem Commands
@@ -293,7 +298,8 @@ Q1) *"How would you create the file named "newnote"?"*
 
 Q2) *"On the deployable machine, what is the file type of "unknown1" in "tryhackme's" home directory?"*
 
-![[Pasted image 20260903170537.png]]
+<img width="918" height="208" alt="image" src="https://github.com/user-attachments/assets/3c774b56-a648-457e-903a-b8fe3a1b8c3e" />
+
 
 **ANSWER:** `ASCII text`
 
@@ -303,13 +309,16 @@ Q3) *"How would we move the file "myfile" to the directory "myfolder"?"*
 
 Q4) *"What are the contents of this file?"*
 
-![[Pasted image 20260903170843.png]]
+<img width="920" height="262" alt="image" src="https://github.com/user-attachments/assets/b04ae8a2-7977-4e93-9800-72930753e926" />
+
 
 **ANSWER:** `THM{FILESYSTEM}`
 
 Q5) *"Continue to apply your knowledge and practice the commands from this task."*
 
 **ANSWER:** No answer needed
+
+<br>
 
 ## Permissions 101
 
@@ -454,7 +463,9 @@ Q1) *On the deployable machine, who is the owner of "important"?*
 1. type `ls -lh` in the terminal
 2. find owner of the file `important`
 
-![[Pasted image 20260903173852.png]]
+<img width="916" height="199" alt="image" src="https://github.com/user-attachments/assets/9704c6e6-d11e-4409-9369-b9ac511aa5e6" />
+
+
 **ANSWER:** `user2`
 
 Q2) *What would the command be to switch to the user "user2"?*
@@ -463,7 +474,9 @@ Q2) *What would the command be to switch to the user "user2"?*
 
 Q3) *Now switch to this user "user2" using the password "user2"*
 
-![[Pasted image 20260903174112.png]]
+<img width="916" height="106" alt="image" src="https://github.com/user-attachments/assets/101c0448-7f40-4160-bb75-2202837077ed" />
+
+
 **ANSWER:** No answer needed
 
 Q4) *Output the contents of "important", what is the flag?*
@@ -471,9 +484,12 @@ Q4) *Output the contents of "important", what is the flag?*
 1. type `ls` to see the contents of the home directory
 2. output contents of file `important` by typing `cat important`
 
-![[Pasted image 20260903174142.png]]
+<img width="922" height="187" alt="image" src="https://github.com/user-attachments/assets/4d49d5a3-7da4-4a66-a401-ebff0bcc2a5c" />
+
 
 **ANSWER:** `THM{SU_USER2}`
+
+<br>
 
 ## Common Directories
 
