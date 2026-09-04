@@ -45,7 +45,7 @@ For the rest of the TryHackMe rooms (which use lab machines), I have already set
 
 > At the bottom :)
 
-Task 1:
+### Task 1 Questions:
 
 Q1) *"I've deployed my machine and am ready to go"*
 
@@ -79,7 +79,7 @@ To echo the text "TryHackMe", we can use `echo TryHackMe`. For multiple words, 
 
 Using `echo` is just the start of a very important skill in Cyber security: being able create output and sending it somewhere. 
 
-Task 2:
+### Task 2 Questions:
 
 Q1) *"What command would we use to find out who we are on the system?"*
 
@@ -101,7 +101,7 @@ Q2) *"What command would we use to output some text?"*
 
 > On Linux, you may notice that files and folders show as different colors. This makes it easy to identify what it is. On this Linux system, folders are blue.
 
-Task 3:
+### Task 3 Questions:
 
 Q1) *"Run `ls` in the current folder. How many folders are there?"*
 
@@ -143,7 +143,7 @@ Q3) *"Use `cat` to read the file within this folder. What does it say?"*
 | ------ | --------------------------------------------------------------------------- |
 | `grep` | searches _inside_ for text. For example, `grep "password123" passwords.txt` |
 
-Task 4: 
+### Task 4 Questions: 
 
 Q1) *"After using `grep "THM" access.log` a flag was found. What is the flag?"*
 
@@ -175,7 +175,7 @@ From being able to combine commands to doing what's called a **redirection** - s
 > For example, `echo hey > welcome` makes a file named `welcome` containing "hey" in it's contents. 
 > We can use `cat welcome` to verify that it worked.
 
-Task 5:
+### Task 5 Questions:
 
 Q1) *"What operator waits for the first command to finish before running the next command?"*
 
