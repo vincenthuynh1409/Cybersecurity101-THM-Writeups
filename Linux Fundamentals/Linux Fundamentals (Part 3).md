@@ -9,6 +9,8 @@
 
 **ANSWERS:** No answer needed
 
+<br>
+
 ## Terminal Text Editors
 
 Throughout the series so far, we have only stored text in files using a combination of the `echo` command and the pipe operators (`>` and `>>`). This isn't an efficient way to handle data when you're working with files with multiple lines and the sorts!
@@ -85,6 +87,8 @@ Task 3:
 ![[Pasted image 20260903180209.png]]
 
 **ANSWER:** `THM{TEXT_EDITORS}`
+
+<br>
 
 ## General / Useful Utilities
 
@@ -213,6 +217,7 @@ Q4) *Create and download files to further apply your learning -- see how you can
 
 **ANSWER:** No answer needed
 
+<br>
 
 ## Processes 101
 
@@ -340,6 +345,8 @@ Task 5:
 
 **ANSWER:** `fg`
 
+<br>
+
 ## Maintaining Your System: Automation
 
 Users may want to schedule a certain action or task to take place after the system has booted. Take, for example, running commands, backing up files, or launching your favourite programs on, such as Spotify or Google Chrome.  
@@ -388,6 +395,8 @@ Task 6:
 ![[Pasted image 20260904154751.png]]
 
 **ANSWER:** `@reboot`
+
+<br>
 
 ## Maintaining Your System: Package Management
 
@@ -438,6 +447,8 @@ Task 7:
 *Q1) Since TryHackMe instances do not have an internet connection...this task only requires you to read through the material.*
 
 **ANSWER:** No answer needed
+
+<br>
 
 ## Maintaining Your System: Logs
 
