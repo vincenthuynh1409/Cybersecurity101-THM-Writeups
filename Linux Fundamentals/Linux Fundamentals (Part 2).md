@@ -9,7 +9,7 @@ In **Linux Fundamentals part 2**, we'll be ditching the in-browser functionality
 - Advancing your knowledge of the filesystem to perform some more useful commands such as copying and moving files
 - Discovering how access to files and folders is managed and how we can determine our access.
 
-Task 1:
+### Task 1 Questions:
 
 Q1) *"Let's proceed!"*
 
@@ -30,7 +30,7 @@ Using cryptography, any input we send in a human-readable format is encrypted fo
 - SSH allows us to remotely execute commands on another device remotely.
 - Any data sent between the devices is encrypted when it is sent over a network such as the Internet
 
-Task 2:
+### Task 2 Questions:
 
 Q1) *"I've logged into the Linux Fundamentals Part 2 machine using SSH!"*
 
@@ -159,7 +159,7 @@ DESCRIPTION
  Manual page ls(1) line 1 (press h for help or q to quit)
 ```
 
-Task 3:
+### Task 3 Questions:
 
 Q1) *"Explore the manual page of the ls command"*
 
@@ -290,7 +290,7 @@ tryhackme@linux2:~$ file note
 note: ASCII text
 ```
 
-Task 4:
+### Task 4 Questions:
 
 Q1) *"How would you create the file named "newnote"?"*
 
@@ -456,7 +456,7 @@ This means:
 - Group: read + execute
 - Others: no access
 
-Task 5:
+### Task 5 Questions:
 
 Q1) *On the deployable machine, who is the owner of "important"?*
 
@@ -544,7 +544,7 @@ todelete trash.txt rubbish.bin
 ```
 
 
-Task 6:
+### Task 6 Questions:
 
 Q1) *Read me!*
 
