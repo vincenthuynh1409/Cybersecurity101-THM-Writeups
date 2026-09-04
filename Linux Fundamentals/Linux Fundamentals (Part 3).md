@@ -82,9 +82,11 @@ Some of VIM's benefits, albeit taking a much longer time to become familiar with
 2. then nano the file `task3` by typing `nano task3`
 3. retrieve flag
 
-![[Screenshot 2026-09-03 180147.png]]
+<img width="922" height="82" alt="image" src="https://github.com/user-attachments/assets/cbca6521-e1f7-463b-8095-8b4c7cb37d6d" />
 
-![[Pasted image 20260903180209.png]]
+
+<img width="919" height="883" alt="image" src="https://github.com/user-attachments/assets/7bf23c4b-9e11-4eb8-b091-2db51eae5e46" />
+
 
 **ANSWER:** `THM{TEXT_EDITORS}`
 
@@ -194,7 +196,8 @@ Q2) *Now, use Python 3's "HTTPServer" module to start a web server in the home d
 2. on the first terminal, start a web server --> type: `python3 -m http.server`
 3. MAKE SURE TO LEAVE THIS TERMINAL OPEN (in order to keep the server up)
 
-![[Pasted image 20260903180917.png]]
+<img width="921" height="178" alt="image" src="https://github.com/user-attachments/assets/599e67ab-7a25-4652-9044-08a696e62d6e" />
+
 
 **ANSWER:** No answer needed
 
@@ -207,7 +210,8 @@ Q3) *Download the file http://10.67.136.43:8000/.flag.txt (opens in new tab) 
 3. once file downloaded, you will see the name of the file downloaded
 4. to see the contents, type: `cat [downloaded file name]`
 
-![[Screenshot 2026-09-03 181932.png]]
+<img width="1888" height="946" alt="image" src="https://github.com/user-attachments/assets/5e972555-a3a9-4d6d-b8b7-fcf57b0bb943" />
+
 
 **ANSWER:** `THM{WGET_WEBSERVER}`
 
@@ -327,9 +331,11 @@ With our process backgrounded using either `Ctrl + Z` or the `&` operator, w
 1. type `ps aux` to see all running processes on the machine
 2. scroll down until you see the flag `THM{..}` in the `COMMAND` column
 
-![[Screenshot 2026-09-04 154154.png]]
+<img width="922" height="835" alt="image" src="https://github.com/user-attachments/assets/9738f725-5791-4e33-98d3-81f7e32b3784" />
 
-![[Pasted image 20260904154224.png]]
+
+<img width="916" height="837" alt="image" src="https://github.com/user-attachments/assets/af8a3e93-9d40-4384-bd5a-5e50d38a6775" />
+
 
 **ANSWER:** `THM{PROCESSES}`
 
@@ -392,7 +398,8 @@ Crontabs can be edited by using `crontab -e`, where you can select an editor (s
 
 1. type `crontab -e`
 
-![[Pasted image 20260904154751.png]]
+<img width="919" height="844" alt="image" src="https://github.com/user-attachments/assets/f7f9447d-2ec7-470d-989b-9efc0d4aa008" />
+
 
 **ANSWER:** `@reboot`
 
@@ -479,7 +486,8 @@ There are, of course, logs that store information about how the OS is running it
 2. then `ls` to see all the logs
 3. find `apache2` log
 
-![[Pasted image 20260904155512.png]]
+<img width="923" height="298" alt="image" src="https://github.com/user-attachments/assets/df1369c9-45d9-4c68-8769-592f163cfd27" />
+
 
 **ANSWER:** No answer needed.
 
@@ -490,7 +498,9 @@ There are, of course, logs that store information about how the OS is running it
 3. the access log should be named `access.log.1` > type: `cat access.log.1` to display the contents of that log file
 4. finally, find the IP address (boxed in blue)
 
-![[Pasted image 20260904155614.png]]
+<img width="924" height="136" alt="image" src="https://github.com/user-attachments/assets/0fb3d044-fe53-4d2e-a3ea-3d6ae687a216" />
+
+
 **ANSWER:** `10.9.232.111`
 
 *Q3) What file did they access?*
