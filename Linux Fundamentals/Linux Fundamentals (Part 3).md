@@ -70,7 +70,7 @@ Some of VIM's benefits, albeit taking a much longer time to become familiar with
 - VIM works on all terminals where nano may not be installed
 - There are a lot of resources such as cheatsheets, tutorials, and the sorts available to you use.
 
-Task 3:
+### Task 3 Questions:
 
 *Q1) Create a file using Nano*
 
@@ -182,7 +182,7 @@ file                    100%[=================================================>]
 
 One flaw with this module is that you have no way of indexing, so you must know the exact name and location of the file that you wish to use. This is why I prefer to use Updog. A more advanced yet lightweight webserver. But for now, let's stick to using Python's "HTTP Server".
 
-Task 4:
+### Task 4 Questions:
 
 Q1) *Ensure you are connected to the deployed instance (10.67.136.43)*
 
@@ -308,7 +308,7 @@ With our process backgrounded using either `Ctrl + Z` or the `&` operator, w
 
 ![](https://assets.tryhackme.com/additional/linux-fundamentals/part3/bg5.png)
 
-Task 5:
+### Task 5 Questions:
 
 *Q1) Read me!*
 
@@ -382,7 +382,7 @@ Crontabs can be edited by using `crontab -e`, where you can select an editor (s
 
 ![](https://assets.tryhackme.com/additional/linux-fundamentals/part3/cron3.png)
 
-Task 6:
+### Task 6 Questions:
 
 *Q1) Ensure you are connected to the deployed instance and look at the running crontabs.*
 
@@ -442,7 +442,7 @@ So, to start, we need to add the GPG key for the developers of Sublime Text 3. (
 
 Removing packages is as easy as reversing. This process is done by using the `add-apt-repository --remove ppa:PPA_Name/ppa` command or by manually deleting the file that we previously added to. Once removed, we can just use `apt remove [software-name-here]` i.e. `apt remove sublime-text`
 
-Task 7:
+### Task 7 Questions:
 
 *Q1) Since TryHackMe instances do not have an internet connection...this task only requires you to read through the material.*
 
@@ -471,7 +471,7 @@ For example, the two types of log files below that are of interest:
 
 There are, of course, logs that store information about how the OS is running itself and actions that are performed by users, such as authentication attempts.
 
-Task 8:
+### Task 8 Questions:
 
 *Q1) Look for the apache2 logs on the deployable Linux machine*
 
