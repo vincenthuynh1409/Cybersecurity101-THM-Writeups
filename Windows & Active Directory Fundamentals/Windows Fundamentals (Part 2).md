@@ -109,13 +109,15 @@ This setting shows how much information Windows will save in the crash dump when
 1. on msconfig, go to the tools tab
 2. launch "About Windows"
 
-![[Pasted image 20260905152350.png]]
+<img width="1573" height="633" alt="image" src="https://github.com/user-attachments/assets/3c3792b6-52d7-4549-91f6-aa64a6ebda23" />
+
 
 **ANSWER:** `Windows User`
 
 *Q3) What is the command for Windows Troubleshooting?*
 
-![[Pasted image 20260905152515.png]]
+<img width="854" height="581" alt="image" src="https://github.com/user-attachments/assets/86b38d95-f466-4603-8401-ef3ff80b3629" />
+
 
 **ANSWER:** `C:\Windows\System32\control.exe /name Microsoft.Troubleshooting`
 
@@ -123,7 +125,8 @@ This setting shows how much information Windows will save in the crash dump when
 
 1. click "System Properties"
 
-![[Pasted image 20260905152656.png]]
+<img width="853" height="579" alt="image" src="https://github.com/user-attachments/assets/38cbd576-7aa0-4173-bcf0-7b847d391c64" />
+
 
 **ANSWER:** `control.exe`
 
@@ -265,7 +268,8 @@ Per Wikipedia, "_WMI allows scripting languages (such as VBScript or Windows Po
 *Q1) What is the command to open Computer Management?*  
 *(The answer is the name of the .msc file, not the full path)*
 
-![[Pasted image 20260905152805.png]]
+<img width="853" height="577" alt="image" src="https://github.com/user-attachments/assets/aec93c4f-572e-4b01-a044-eb1d5d5bf790" />
+
 
 **ANSWER:** `compmgmt.msc`
 
@@ -277,7 +281,8 @@ Per Wikipedia, "_WMI allows scripting languages (such as VBScript or Windows Po
 
 ![](https://miro.medium.com/v2/resize:fit:607/1*I9vO-izxqG6moRHuNr9eyQ.png)
 
-![[Pasted image 20260905153524.png]]
+<img width="1478" height="1060" alt="image" src="https://github.com/user-attachments/assets/e5eb4a40-68df-4107-a5b3-718097260f25" />
+
 
 **ANSWER:** `At System Startup`
 
@@ -342,7 +347,8 @@ Towards the very bottom of this utility, there is a search bar. Please give it a
 1. use the app "run", and type "msconfig"
 2. find "System Information"
 
-![[Pasted image 20260905153844.png]]
+<img width="854" height="574" alt="image" src="https://github.com/user-attachments/assets/f75cd969-ff9e-48b8-8e0c-d05dacf5acfb" />
+
 
 **ANSWER:** `msinfo32.exe`
 
@@ -351,7 +357,8 @@ Towards the very bottom of this utility, there is a search bar. Please give it a
 1. launch "System Information"
 2. find "System Name"
 
-![[Pasted image 20260905154009.png]]
+<img width="1742" height="974" alt="image" src="https://github.com/user-attachments/assets/34e7cb88-dc12-4b09-b37d-74f505c7224e" />
+
 
 **ANSWER:** `THM-WINFUN2`
 
@@ -361,7 +368,8 @@ Towards the very bottom of this utility, there is a search bar. Please give it a
 2. find "Environment Variables" subfolder
 3. then find the value for ComSpec
 
-![[Pasted image 20260905154055.png]]
+<img width="1743" height="972" alt="image" src="https://github.com/user-attachments/assets/d292b747-4802-4cc4-bb47-d23f78787548" />
+
 
 **ANSWER:** `%SystemRoot%\system32\cmd.exe`
 
@@ -414,7 +422,8 @@ Although not captured in any of the images above, Resource Monitor has a pane at
 
 *Q1) What is the command to open Resource Monitor? (The answer is the name of the .exe file, not the full path)*
 
-![[Pasted image 20260905154300.png]]
+<img width="849" height="576" alt="image" src="https://github.com/user-attachments/assets/15ef8650-3567-4148-93c9-176a37880fa4" />
+
 
 **ANSWER:** `resmon.exe`
 
@@ -491,7 +500,8 @@ Refer to the following link to see a comprehensive list of commands you can exec
 
 *Q1) In System Configuration, what is the full command for Internet Protocol Configuration?*
 
-![[Pasted image 20260905154340.png]]
+<img width="851" height="575" alt="image" src="https://github.com/user-attachments/assets/b9f15f18-70d4-4072-b33a-70eec71b82c1" />
+
 
 **ANSWER:** `C:\Windows\System32\cmd.exe /k %windir%\system32\ipconfig.exe`
 
@@ -500,7 +510,8 @@ Refer to the following link to see a comprehensive list of commands you can exec
 1. launch "Internet Protocol Configuration" (opens terminal)
 2. type `ipconfig /all`
 
-![[Pasted image 20260905154620.png]]
+<img width="1322" height="722" alt="image" src="https://github.com/user-attachments/assets/e35eea2b-6f20-4d77-a0fc-58a74ef6c76a" />
+
 
 **ANSWER:** `ipconfig /all`
 
@@ -531,7 +542,8 @@ Refer to the following Microsoft documentation [here(opens in new tab)](https:/
 
 *Q1) What is the command to open the Registry Editor? (The answer is the name of  the .exe file, not the full path)*
 
-![[Pasted image 20260905154652.png]]
+<img width="856" height="571" alt="image" src="https://github.com/user-attachments/assets/06c8577f-0ebb-41cb-80ce-bdaf0aaa836c" />
+
 
 **ANSWER:** `regedt32.exe`
 
