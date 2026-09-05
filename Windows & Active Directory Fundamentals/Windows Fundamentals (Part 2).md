@@ -131,6 +131,8 @@ This setting shows how much information Windows will save in the crash dump when
 **ANSWER:** `control.exe`
 
 
+<br>
+
 ## Change UAC Settings
 
 We're continuing with Tools that are available through the **System Configuration** panel.
@@ -159,6 +161,8 @@ You can find the current level by looking at the position of the slider in the 
 *Q1) What is the command to open User Account Control Settings? (The answer is the name of the .exe file, not the full path)*
 
 **ANSWER:** `UserAccountControlSettings.exe`
+
+<br>
 
 ## Computer Management
 
@@ -290,6 +294,8 @@ Per Wikipedia, "_WMI allows scripting languages (such as VBScript or Windows Po
 
 **ANSWER:** `sh4r3dF0Ld3r`
 
+<br>
+
 ## System Information
 
 We're continuing with Tools that are available through the System Configuration panel.
@@ -373,6 +379,9 @@ Towards the very bottom of this utility, there is a search bar. Please give it a
 
 **ANSWER:** `%SystemRoot%\system32\cmd.exe`
 
+
+<br>
+
 ## Resource Monitor
 
 We're continuing with Tools that are available through the System Configuration panel.  
@@ -427,6 +436,7 @@ Although not captured in any of the images above, Resource Monitor has a pane at
 
 **ANSWER:** `resmon.exe`
 
+<br>
 
 ## Command Prompt
 
@@ -515,6 +525,7 @@ Refer to the following link to see a comprehensive list of commands you can exec
 
 **ANSWER:** `ipconfig /all`
 
+<br>
 
 ## Registry Editor
 
