@@ -16,7 +16,7 @@ Windows 11 comes in 2 flavors, Home and Pro. You can read the difference between
 
 Even though we didn’t talk about servers, the current version of the Windows operating system for servers is [Windows Server 2025(opens in new tab)](https://www.microsoft.com/en-us/windows-server/).
 
-Many critics like to bash on Microsoft, but they have made long strides to improve the usability and security with each new version of Windows .
+Many critics like to bash on Microsoft, but they have made long strides to improve the usability and security with each new version of Windows.
 
 **Note** : The Windows edition for the attached VM is Windows Server 2019 Standard, as seen in   **System Information** .
 
@@ -31,6 +31,8 @@ As of October 5th, 2021 - Windows 11 now is the current Windows operating system
 *Q1) What encryption can you enable on Pro that you can't enable in Home?*
 
 **ANSWER:** `BitLocker`
+
+<br>
 
 ## The Desktop (GUI)
 
@@ -158,6 +160,8 @@ Q3) Besides Clock and Network, what other icon is visible in the Notification Ar
 
 **ANSWER:** `Action Center`
 
+<br>
+
 ## Introduction to Windows & Remote Desktop Setup
 
 The Windows operating system (OS) is a complex product with many system files, utilities, settings, features, etc. 
@@ -204,6 +208,8 @@ The Windows operating system (OS) is a complex product with many system files, u
 *Q1) Read above and start the lab machine.*
 
 **ANSWER:** No answer needed.
+
+<br>
 
 ## The File System
 
@@ -274,6 +280,8 @@ Not all its uses are malicious. For example, when you download a file from the I
 
 **ANSWER:** `New Technology File System`
 
+<br>
+
 ## The Windows / System32 Folders
 
 The Windows folder ( `C:\Windows` ) is traditionally known as the folder which contains the Windows operating system. 
@@ -302,6 +310,8 @@ You should proceed with extreme caution when interacting with this folder. Accid
 *Q1) What is the system variable for the Windows folder?*
 
 **ANSWER:** `%windir%`
+
+<br>
 
 ## User Accounts, Profiles, & Permissions
 
@@ -409,6 +419,8 @@ Each group has permissions set to it, and users are assigned/added to groups by 
 
 **ANSWER:** `window$Fun1!`
 
+<br>
+
 ## User Account Control
 
 The large majority of home users are logged into their Windows systems as local administrators. Remember from the previous task that any user with administrator as the account type can make changes to the system.
@@ -453,6 +465,7 @@ This feature reduces the likelihood of malware successfully compromising your sy
 
 **ANSWER:** `User Account Control`
 
+<br>
 
 ## Settings & Control Panel
 
@@ -510,6 +523,8 @@ If we click on the Best match, a window to the Settings menu appears to make cha
 
 
 **ANSWER:** `Windows Defender Firewall`
+
+<br>
 
 ## Task Manager
 
