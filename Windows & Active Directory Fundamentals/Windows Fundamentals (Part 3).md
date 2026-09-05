@@ -39,6 +39,7 @@ Refer to the Windows Updates [FAQ(opens in new tab)](https://support.microsoft.
 
 **ANSWER:** `5/3/2021`
 
+<br>
 
 ## Windows Security
 
@@ -80,6 +81,8 @@ Next, we'll look at **Virus & threat protection**.
 *Q1) Checking the Security section on your VM, which area needs immediate attention?*
 
 **ANSWERS:** `Virus & threat protection`
+
+<br>
 
 ## Virus & Threat Protection
 
@@ -147,6 +150,8 @@ The below image was taken from another Windows device to show this feature.
 
 **ANSWER:** `Real-time Protection`
 
+<br>
+
 ## Firewall & Network Protection
 
 What is a **firewall**?
@@ -193,6 +198,8 @@ Configuring the **Windows Defender Firewall** is for advanced Windows users. R
 
 **ANSWER:** `Public Network`
 
+<br>
+
 ## App & Browser Control
 
 In this section, you can change the settings for the **Microsoft Defender SmartScreen**.
@@ -223,6 +230,7 @@ Warning: Unless you are 100% confident in what you are doing, it is recommende
 
 **ANSWER:** No answer needed.
 
+<br>
 
 ## Device Security
 
@@ -258,6 +266,7 @@ Per Microsoft, "_Trusted Platform Module (TPM) technology is designed to provide
 
 **ANSWER:** `Trusted Platform Module`
 
+<br>
 
 ## BitLocker
 
@@ -278,6 +287,8 @@ Refer to the official Microsoft documentation to learn more about BitLocker [he
 *Q1) We should use a removable drive on systems **without** a TPM version 1.2 or later. What does this removable drive contain?*
 
 **ANSWER:** `Startup Key`
+
+<br>
 
 ## Volume Shadow Copy Service
 
