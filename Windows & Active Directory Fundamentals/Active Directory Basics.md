@@ -49,6 +49,7 @@ Be sure to click the **Start Lab Machine** button below now, as you'll use the
 
 **ANSWER:** `Domain Controller`
 
+<br>
 
 ## Active Directory 
 
@@ -141,7 +142,7 @@ You are probably wondering why we have both groups and OUs. While both are used 
 
 **ANSWER:** `Organizational Units`
 
-
+<br>
 
 ## Managing Users in AD
 
@@ -241,7 +242,7 @@ Log into Sophie's account with your new password and retrieve a flag from Sophie
 **ANSWER:** `delegation`
 
 
-
+<br>
 
 ## Managing Computers in AD
 
@@ -283,7 +284,7 @@ Now, move the personal computers and laptops to the Workstations OU and the serv
 
 **ANSWER:** `yay`
 
-
+<br>
 
 ## Group Policies
 
@@ -414,7 +415,7 @@ Q1) What is the name of the network share used to distribute GPOs to domain mach
 
 **ANSWER:** `yay`
 
-
+<br>
 
 ## Authentication Methods
 
@@ -486,7 +487,7 @@ Q1) *Will a current version of Windows use NetNTLM as the preferred authenticati
 **ANSWER:** `nay`
 
 
-
+<br>
 
 ## Tree, Forests and Trusts
 
