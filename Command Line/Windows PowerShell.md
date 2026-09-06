@@ -59,7 +59,7 @@ You can follow the steps below to connect to the target VM via SSH using the Rem
 | **Password** | `JollyR0ger#` |
 | **IP**       | MACHINE_IP    |
 
-## Launching PowerShell
+### Launching PowerShell
 
 PowerShell can be launched in several ways, depending on your needs and environment. If you are working on a Windows system from the graphical interface (GUI), these are some of the possible ways to launch it:
 
@@ -86,7 +86,7 @@ PS C:\Users\captain>
 
 After PowerShell has launched, we’re presented with a `PS` (which stands for `PowerShell`) prompt in the current working directory.
 
-## Basic Syntax: Verb-Noun
+### Basic Syntax: Verb-Noun
 
 As previously mentioned, PowerShell commands are known as `cmdlets` (pronounced `command-lets`). They are much more powerful than the traditional Windows commands and allow for more advanced data manipulation.
 
@@ -95,7 +95,7 @@ Cmdlets follow a consistent `Verb-Noun` naming convention. This structure make
 - `Get-Content`: Retrieves (gets) the content of a file and displays it in the console.
 - `Set-Location`: Changes (sets) the current working directory.
 
-## Basic Cmdlets
+### Basic Cmdlets
 
 To list all available cmdlets, functions, aliases, and scripts that can be executed in the current PowerShell session, we can use `Get-Command`. It’s an essential tool for discovering what commands one can use.
 
@@ -203,7 +203,7 @@ Alias           clear -> Clear-Host
 [...]
 ```
 
-## Where to Find and Download Cmdlets
+### Where to Find and Download Cmdlets
 
 Another powerful feature of PowerShell is the possibility of extending its functionality by downloading additional cmdlets from online repositories.
 
@@ -782,6 +782,5 @@ The second example demonstrates that we don't need to know how to script to bene
 *Q1) What is the syntax to execute the command `Get-Service` on a remote computer named "RoyalFortune"? Assume you don't need to provide credentials to establish the connection. (for the sake of this question, avoid the use of quotes (" or ') in your answer)*
 
 **ANSWER:**
-
 
 
