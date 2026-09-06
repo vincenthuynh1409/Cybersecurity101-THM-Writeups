@@ -1,12 +1,12 @@
 # Windows PowerShell
 
-### What is PowerShell
+## What is PowerShell
 
 From the official Microsoft [page(opens in new tab)](https://learn.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.4): _“PowerShell is a cross-platform task automation solution made up of a command-line shell, a scripting language, and a configuration management framework.”_
 
 PowerShell is a powerful tool from Microsoft designed for task automation and configuration management. It combines a command-line interface and a scripting language built on the .NET framework. Unlike older text-based command-line tools, PowerShell is object-oriented, which means it can handle complex data types and interact with system components more effectively. Initially exclusive to Windows, PowerShell has lately expanded to support macOS and Linux, making it a versatile option for IT professionals across different operating systems.
 
-## A Brief History of PowerShell
+### A Brief History of PowerShell
 
 PowerShell was developed to overcome the limitations of existing command-line tools and scripting environments in Windows. In the early 2000s, as Windows was increasingly used in complex enterprise environments, traditional tools like `cmd.exe` and batch files fell short in automating and managing these systems. Microsoft needed a tool that could handle more sophisticated administrative tasks and interact with Windows’ modern APIs.
 
@@ -14,7 +14,7 @@ Jeffrey Snover, a Microsoft engineer, realised that Windows and Unix handled sys
 
 As IT environments evolved to include various operating systems, the need for a versatile automation tool grew. In 2016, Microsoft responded by releasing PowerShell Core, an open-source and cross-platform version that runs on Windows, macOS, and Linux.
 
-## The Power in PowerShell
+### The Power in PowerShell
 
 To fully grasp the power of PowerShell, we first need to understand what an **object** is in this context.
 
