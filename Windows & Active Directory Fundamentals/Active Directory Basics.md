@@ -426,7 +426,7 @@ When using Windows domains, all credentials are stored in the Domain Controllers
 
 While NetNTLM should be considered obsolete, most networks will have both protocols enabled. Let's take a deeper look at how each of these protocols works.
 
-Kerberos Authentication
+### Kerberos Authentication
 
 Kerberos authentication is the default authentication protocol for any recent version of Windows. Users who log into a service using Kerberos will be assigned tickets. Think of tickets as proof of a previous authentication. Users with tickets can present them to a service to demonstrate they have already authenticated into the network before and are therefore enabled to use it.
 
@@ -454,7 +454,7 @@ When Kerberos is used for authentication, the following process happens:
 <img width="1029" height="362" alt="image" src="https://github.com/user-attachments/assets/879d2154-dfcb-4a65-9a71-2ff01318e8a6" />
 
 
-NetNTLM Authentication
+### NetNTLM Authentication
 
 NetNTLM works using a challenge-response mechanism. The entire process is as follows:
 
