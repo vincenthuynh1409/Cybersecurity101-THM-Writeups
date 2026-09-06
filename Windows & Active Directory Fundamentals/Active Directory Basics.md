@@ -335,13 +335,13 @@ As you can see, plenty of policies can be established in a GPO. While explaining
 <img width="417" height="507" alt="image" src="https://github.com/user-attachments/assets/a26082ca-6be2-4cc2-b611-b50c8ee38c1a" />
  
 
-GPO distribution
+### GPO distribution
 
 GPOs are distributed to the network via a network share called `SYSVOL`, which is stored in the DC. All users in a domain should typically have access to this share over the network to sync their GPOs periodically. The SYSVOL share points by default to the `C:\Windows\SYSVOL\sysvol\` directory on each of the DCs in our network.
 
 Once a change has been made to any GPOs, it might take up to 2 hours for computers to catch up. If you want to force any particular computer to sync its GPOs immediately, you can always run the following command on the desired computer:
 
-Windows PowerShell
+### Windows PowerShell
 
 ```shell-session
 PS C:\> gpupdate /force
@@ -372,7 +372,7 @@ Once the GPO is configured, we will need to link it to all of the OUs correspond
 <img width="923" height="619" alt="image" src="https://github.com/user-attachments/assets/02d3118c-0fd8-42ec-bfaa-99f288fde216" />
 
 
-**_Auto Lock Screen GPO_**
+### Auto Lock Screen GPO
 
 For the first GPO, regarding screen locking for workstations and servers, we could directly apply it over the `Workstations`, `Servers` and `Domain Controllers` OUs we created previously.
 
