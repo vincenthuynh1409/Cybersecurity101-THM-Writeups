@@ -10,7 +10,8 @@ While this sounds like a very relaxed lifestyle, let's suppose your business sud
 
 To overcome these limitations, we can use a Windows domain. Simply put, a **Windows domain** is a group of users and computers under the administration of a given business. The main idea behind a domain is to centralise the administration of common components of a Windows computer network in a single repository called **Active Directory (AD)**. The server that runs the Active Directory services is known as a **Domain Controller (DC)**.
 
-![Windows Domain Overview](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/bebe5dfec0208bf563d01fa2dd1fb7a7.png)
+<img width="452" height="362" alt="image" src="https://github.com/user-attachments/assets/09398812-95dd-49d8-8cfe-ec351d37da90" />
+
 
 The main advantages of having a configured Windows domain are:
 
@@ -96,17 +97,20 @@ You can obtain the complete list of default security groups from the [Microsoft
 
 To configure users, groups or machines in Active Directory, we need to log in to the Domain Controller and run "Active Directory Users and Computers" from the start menu:
 
-![Start menu AD Users and Computers](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/11d01963392078c1450300d2881f9160.png)
+<img width="415" height="675" alt="image" src="https://github.com/user-attachments/assets/6943ae03-84b6-4b46-a415-fa33e778db00" />
+
 
 This will open up a window where you can see the hierarchy of users, computers and groups that exist in the domain. These objects are organised in **Organizational Units (OUs)** which are container objects that allow you to classify users and machines. OUs are mainly used to define sets of users with similar policing requirements. The people in the Sales department of your organisation are likely to have a different set of policies applied than the people in IT, for example. Keep in mind that a user can only be a part of a single OU at a time.
 
 Checking our machine, we can see that there is already an OU called `THM` with five child OUs for the IT, Management, Marketing, R&D, and Sales departments. It is very typical to see the OUs mimic the business' structure, as it allows for efficiently deploying baseline policies that apply to entire departments. Remember that while this would be the expected model most of the time, you can define OUs arbitrarily. Feel free to right-click the `THM` OU and create a new OU under it called `Students` just for the fun of it.
 
-![AD Users and Computers](https://cdn-images.tryhackme.com/user-uploads/678ecc92c80aa206339f0f23/room-content/678ecc92c80aa206339f0f23-1751295060748.png)
+<img width="915" height="451" alt="image" src="https://github.com/user-attachments/assets/b46f5cde-5556-4b9f-859a-575a9c3e16ab" />
+
 
 If you open any OUs, you can see the users they contain and perform simple tasks like creating, deleting or modifying them as needed. You can also reset passwords if needed (pretty useful for the helpdesk):
 
-![IT department OU](https://cdn-images.tryhackme.com/user-uploads/678ecc92c80aa206339f0f23/room-content/678ecc92c80aa206339f0f23-1751295060689.png)
+<img width="913" height="451" alt="image" src="https://github.com/user-attachments/assets/f2a2a3f1-060d-4b45-8179-e97f33b0d567" />
+
 
 You probably noticed already that there are other default containers apart from the THM OU. These containers are created by Windows automatically and contain the following:
 
@@ -143,21 +147,25 @@ You are probably wondering why we have both groups and OUs. While both are used 
 
 Your first task as the new domain administrator is to check the existing AD OUs and users, as some recent changes have happened to the business. You have been given the following organisational chart and are expected to make changes to the AD to match it:
 
-![THM Organisational Chart](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/88f0ade5a672ae681639e6049406a4ec.png)
+<img width="1542" height="702" alt="image" src="https://github.com/user-attachments/assets/45ac12a3-5bef-4546-b0a2-0748410779d3" />
+
 
 ### Deleting extra OUs and users
 
 The first thing you should notice is that there is an additional department OU in your current AD configuration that doesn't appear in the chart. We've been told it was closed due to budget cuts and should be removed from the domain. If you try to right-click and delete the OU, you will get the following error:
 
-![OU delete error](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/38edaf4a8665c257c62556096c69cb6f.png)
+<img width="404" height="159" alt="image" src="https://github.com/user-attachments/assets/43d69e5d-d6da-444e-9ae6-72a93a455c5a" />
+
 
 By default, OUs are protected against accidental deletion. To delete the OU, we need to enable the **Advanced Features** in the View menu:
 
-![Enabling advanced features](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/15b282b6e3940f4c26c477a8c21f8266.png)
+<img width="754" height="417" alt="image" src="https://github.com/user-attachments/assets/d17a9986-2b37-48ad-bbbb-ee573889cab6" />
+
 
 This will show you some additional containers and enable you to disable the accidental deletion protection. To do so, right-click the OU and go to Properties. You will find a checkbox in the Object tab to disable the protection:
 
-![Disable OU delete protection](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/ad6b6d886c0448d14ce4ec8c62250256.png)
+<img width="420" height="472" alt="image" src="https://github.com/user-attachments/assets/4348baea-a7c7-4746-8ace-8dde0f183682" />
+
 
 Be sure to uncheck the box and try deleting the OU again. You will be prompted to confirm that you want to delete the OU, and as a result, any users, groups or OUs under it will also be deleted.
 
@@ -171,17 +179,20 @@ One of the most common use cases for this is granting `IT support` the privile
 
 For this example, we will delegate control over the Sales OU to Phillip. To delegate control over an OU, you can right-click it and select **Delegate Control**:
 
-![Delegating OU control](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/74f8d615658a03aeb1cfdb6767d0a0a3.png)
+<img width="311" height="372" alt="image" src="https://github.com/user-attachments/assets/be3fa27a-0dad-44fa-a5e1-29e61ebb13d5" />
+
 
 This should open a new window where you will first be asked for the users to whom you want to delegate control:
 
 **Note:** To avoid mistyping the user's name, write "phillip" and click the **Check Names** button. Windows will autocomplete the user for you.
 
-![Delegating Sales OU to Phillip](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/2814715e1dbadaef334973028e02da69.png)  
+<img width="583" height="570" alt="image" src="https://github.com/user-attachments/assets/5f9a2bff-c7fa-4895-82ba-2a36ba811a7b" />
+ 
 
 Click OK, and on the next step, select the following option:
 
-![Delegating password resets](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/3f81df2b38e35ca5729aee7a76c6b220.png)
+<img width="531" height="414" alt="image" src="https://github.com/user-attachments/assets/0c207c8c-6f56-4703-8ac0-3c290b30689d" />
+
 
 Click next a couple of times, and now Phillip should be able to reset passwords for any user in the sales department. While you'd probably want to repeat these steps to delegate the password resets of the Marketing and Management departments, we'll leave it here for this task. You are free to continue to configure the rest of the OUs if you so desire.
 
@@ -236,7 +247,8 @@ Log into Sophie's account with your new password and retrieve a flag from Sophie
 
 By default, all the machines that join a domain (except for the DCs) will be put in the container called "Computers". If we check our DC, we will see that some devices are already there:
 
-![Computers OU](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/a1d41d5437e73d62ede10f2015dc4dfc.png)
+<img width="754" height="417" alt="image" src="https://github.com/user-attachments/assets/03a8f711-6fb5-4153-ad9e-288e135bf5e7" />
+
 
 We can see some servers, some laptops and some PCs corresponding to the users in our network. Having all of our devices there is not the best idea since it's very likely that you want different policies for your servers and the machines that regular users use on a daily basis.
 
@@ -256,7 +268,8 @@ Domain Controllers are the third most common device within an Active Directory d
 
 Since we are tidying up our AD, let's create two separate OUs for `Workstations` and `Servers` (Domain Controllers are already in an OU created by Windows). We will be creating them directly under the `thm.local` domain container. In the end, you should have the following OU structure:
 
-![final OU structure](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/09405010962071f21c6dee7b4eb8c59a.png)
+<img width="754" height="366" alt="image" src="https://github.com/user-attachments/assets/29d9cf7c-3955-489a-be33-533278f58fc2" />
+
 
 Now, move the personal computers and laptops to the Workstations OU and the servers to the Servers OU from the Computers container. Doing so will allow us to configure policies for each OU later.
 
@@ -280,39 +293,46 @@ Windows manages such policies through **Group Policy Objects (GPO)**. GPOs are 
 
 To configure GPOs, you can use the **Group Policy Management** tool, available from the start menu:
 
-![Start menu GPM](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/b19052c41e27fbbb2651038cede63e11.png)
+<img width="386" height="676" alt="image" src="https://github.com/user-attachments/assets/ca3a1c00-abfb-45c6-aed7-d74ec25d2d79" />
 
 The first thing you will see when opening it is your complete OU hierarchy, as defined before. To configure Group Policies, you first create a GPO under **Group Policy Objects** and then link it to the OU where you want the policies to apply. As an example, you can see there are some already existing GPOs in your machine:
 
-![Existing OUs in your machine](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/d82cb9440894c831f6f3d58a2b0538ed.png)  
+<img width="954" height="577" alt="image" src="https://github.com/user-attachments/assets/22e6820f-9745-46a3-b586-51cc4915c0b3" />
+
 
 We can see in the image above that 3 GPOs have been created. From those, the `Default Domain Policy` and `RDP Policy` are linked to the `thm.local` domain as a whole, and the `Default Domain Controllers Policy` is linked to the `Domain Controllers` OU only. Something important to have in mind is that any GPO will apply to the linked OU and any sub-OUs under it. For example, the `Sales` OU will still be affected by the `Default Domain Policy`.
 
 Let's examine the `Default Domain Policy` to see what's inside a GPO. The first tab you'll see when selecting a GPO shows its **scope**, which is where the GPO is linked in the AD. For the current policy, we can see that it has only been linked to the `thm.local` domain:
 
-![OU scope](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/06d5e70fbfa648f73e4598e18c8e9527.png)  
+<img width="954" height="577" alt="image" src="https://github.com/user-attachments/assets/93365e0e-61f8-4d89-b805-44ad9d2a106b" />
+
 
 As you can see, you can also apply **Security Filtering** to GPOs so that they are only applied to specific users/computers under an OU. By default, they will apply to the **Authenticated Users** group, which includes all users/PCs.
 
 The **Settings** tab includes the actual contents of the GPO and lets us know what specific configurations it applies. As stated before, each GPO has configurations that apply to computers only and configurations that apply to users only. In this case, the `Default Domain Policy` only contains Computer Configurations:
 
-![OU Settings](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/c9293853549d5126b77bf2de8086e076.png)  
+<img width="954" height="598" alt="image" src="https://github.com/user-attachments/assets/4474ea0e-7015-4ed7-b8c1-8d621c2355d8" />
+
 
 Feel free to explore the GPO and expand on the available items using the "show" links on the right side of each configuration. In this case, the `Default Domain Policy` indicates really basic configurations that should apply to most domains, including password and account lockout policies:
 
-![OU detailed settings](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/a5f4c2605062934579c64f2cfa025308.png)
+<img width="578" height="405" alt="image" src="https://github.com/user-attachments/assets/e62e968b-a783-4678-a039-e5f1b4686bf0" />
+
 
 Since this GPO applies to the whole domain, any change to it would affect all computers. Let's change the minimum password length policy to require users to have at least 10 characters in their passwords. To do this, right-click the GPO and select **Edit**:
 
-![Editing a GPO settings](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/b71d8de9e74d129d0ad4142863deadc4.png)  
+<img width="418" height="374" alt="image" src="https://github.com/user-attachments/assets/c4658cda-fedc-4f18-9084-95b9ff600243" />
+
 
 This will open a new window where we can navigate and edit all the available configurations. To change the minimum password length, go to `Computer Configurations -> Policies -> Windows Setting -> Security Settings -> Account Policies -> Password Policy` and change the required policy value:
 
-![Password policy GPO](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/bd3665c2569aa8fbe4f7482a5750f018.png)  
+<img width="787" height="565" alt="image" src="https://github.com/user-attachments/assets/45574bf7-69be-49d9-9768-cea279dc2edb" />
+
 
 As you can see, plenty of policies can be established in a GPO. While explaining every single of them would be impossible in a single room, do feel free to explore a bit, as some of the policies are straightforward. If more information on any of the policies is needed, you can double-click them and read the **Explain** tab on each of them:
 
-![OU settings explain tab](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/de35e7c03fafcb5b9df5457181e32652.png)  
+<img width="417" height="507" alt="image" src="https://github.com/user-attachments/assets/a26082ca-6be2-4cc2-b611-b50c8ee38c1a" />
+ 
 
 GPO distribution
 
@@ -341,13 +361,15 @@ We want to restrict access to the Control Panel across all machines to only the 
 
 Let's create a new GPO called `Restrict Control Panel Access` and open it for editing. Since we want this GPO to apply to specific users, we will look under `User Configuration` for the following policy:
 
-![Restricting access to control panel](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/9b333a11d12f05dd4413e3f208aab363.png)  
+<img width="919" height="565" alt="image" src="https://github.com/user-attachments/assets/11e93688-4e48-442e-a6dd-781e0ded3e41" />
+
 
 Notice we have enabled the **Prohibit Access to Control Panel and PC settings** policy.
 
 Once the GPO is configured, we will need to link it to all of the OUs corresponding to users who shouldn't have access to the Control Panel of their PCs. In this case, we will link the `Marketing`, `Management` and `Sales` OUs by dragging the GPO to each of them:
 
-![Linking Restrict Control Panel GPO](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/4a8f727788731b7fbf87fc079682d1a6.png)  
+<img width="923" height="619" alt="image" src="https://github.com/user-attachments/assets/02d3118c-0fd8-42ec-bfaa-99f288fde216" />
+
 
 **_Auto Lock Screen GPO_**
 
@@ -359,11 +381,13 @@ While this solution should work, an alternative consists of simply applying the 
 
 Let's create a new GPO, call it `Auto Lock Screen`, and edit it. The policy to achieve what we want is located in the following route:
 
-![Configuring machine inactivity limit](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/44c0cde18837cb6333c78749356ac0ee.png)  
+<img width="787" height="565" alt="image" src="https://github.com/user-attachments/assets/d21bc4bb-9559-4398-9137-a5b7d17a571d" />
+
 
 We will set the inactivity limit to 5 minutes so that computers get locked automatically if any user leaves their session open. After closing the GPO editor, we will link the GPO to the root domain by dragging the GPO to it:
 
-![Linking Auto Lock Screen GPO](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/fcfc77d126991ffee8c927202b4dde37.png)
+<img width="923" height="579" alt="image" src="https://github.com/user-attachments/assets/63e2a127-f7b5-4e71-8aaa-86712843fa39" />
+
 
 Once the GPOs have been applied to the correct OUs, we can log in as any users in either Marketing, Sales or Management for verification. For this task, let's connect via RDP using Mark's credentials:
 
@@ -413,25 +437,28 @@ When Kerberos is used for authentication, the following process happens:
     
     Notice the TGT is encrypted using the **krbtgt** account's password hash, and therefore the user can't access its contents. It is essential to know that the encrypted TGT includes a copy of the Session Key as part of its contents, and the KDC has no need to store the Session Key as it can recover a copy by decrypting the TGT if needed.
     
+<img width="1047" height="416" alt="image" src="https://github.com/user-attachments/assets/3ee2baa6-251a-4df6-b2c8-345c1b6ed59c" />
 
-![Kerberos step 1](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/d36f5a024c20fb480cdae8cd09ddc09f.png)
 
 1. When a user wants to connect to a service on the network like a share, website or database, they will use their TGT to ask the KDC for a **Ticket Granting Service (TGS)**. TGS are tickets that allow connection only to the specific service they were created for. To request a TGS, the user will send their username and a timestamp encrypted using the Session Key, along with the TGT and a **Service Principal Name (SPN),** which indicates the service and server name we intend to access.
     
     As a result, the KDC will send us a TGS along with a **Service Session Key**, which we will need to authenticate to the service we want to access. The TGS is encrypted using a key derived from the **Service Owner Hash**. The Service Owner is the user or machine account that the service runs under. The TGS contains a copy of the Service Session Key on its encrypted contents so that the Service Owner can access it by decrypting the TGS.
     
 
-![Kerberos step 2](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/84504666e78373c613d3e05d176282dc.png)
+<img width="1049" height="486" alt="image" src="https://github.com/user-attachments/assets/3709c3a1-d0a2-48ba-bb2f-15c2d2dc1d82" />
+
 
 1. The TGS can then be sent to the desired service to authenticate and establish a connection. The service will use its configured account's password hash to decrypt the TGS and validate the Service Session Key.
 
-![Kerberos step 3](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/8fbf08d03459c1b792f3b6efa4d7f285.png)
+<img width="1029" height="362" alt="image" src="https://github.com/user-attachments/assets/879d2154-dfcb-4a65-9a71-2ff01318e8a6" />
+
 
 NetNTLM Authentication
 
 NetNTLM works using a challenge-response mechanism. The entire process is as follows:
 
-![NetNTLM authentication](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/2eab5cacbd0d3e9dc9afb86169b711ec.png)
+<img width="1051" height="605" alt="image" src="https://github.com/user-attachments/assets/f0122bac-c87b-4e3e-8b0b-0da8c2b1bad7" />
+
 
 1. The client sends an authentication request to the server they want to access.
 2. The server generates a random number and sends it as a challenge to the client.
@@ -465,7 +492,8 @@ Q1) *Will a current version of Windows use NetNTLM as the preferred authenticati
 
 So far, we have discussed how to manage a single domain, the role of a Domain Controller and how it joins computers, servers and users.
 
-![Single Domain](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/69f2441bbafd4cfe57a101d87f3c5950.png)
+<img width="641" height="384" alt="image" src="https://github.com/user-attachments/assets/b3b41a45-b9f0-48d4-823b-83fe0e14eb4f" />
+
 
 As companies grow, so do their networks. Having a single domain for a company is good enough to start, but in time some additional needs might push you into having more than one.
 
@@ -477,7 +505,8 @@ Luckily for us, Active Directory supports integrating multiple domains so that y
 
 If our `thm.local` domain was split into two subdomains for UK and US branches, you could build a tree with a root domain of `thm.local` and two subdomains called `uk.thm.local` and `us.thm.local`, each with its AD, computers and users:
 
-![Tree](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/abea24b7979676a1dcc0c568054544c8.png)
+<img width="1218" height="963" alt="image" src="https://github.com/user-attachments/assets/4d8241a1-2ebd-4c22-ad1d-dc99604937c7" />
+
 
 This partitioned structure gives us better control over who can access what in the domain. The IT people from the UK will have their own DC that manages the UK resources only. For example, a UK user would not be able to manage US users. In that way, the Domain Administrators of each branch will have complete control over their respective DCs, but not other branches' DCs. Policies can also be configured independently for each domain in the tree.
 
@@ -487,7 +516,8 @@ A new security group needs to be introduced when talking about trees and forests
 
 The domains you manage can also be configured in different namespaces. Suppose your company continues growing and eventually acquires another company called `MHT Inc.` When both companies merge, you will probably have different domain trees for each company, each managed by its own IT department. The union of several trees with different namespaces into the same network is known as a **forest**.
 
-![Forest](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/03448c2faf976db890118d835000bab7.png)
+<img width="2778" height="1119" alt="image" src="https://github.com/user-attachments/assets/08b05bad-b423-424d-a376-e69fb59da0d1" />
+
 
 ### Trust Relationships
 
@@ -497,7 +527,8 @@ In simple terms, having a trust relationship between domains allows you to autho
 
 The simplest trust relationship that can be established is a **one-way trust relationship**. In a one-way trust, if `Domain AAA` trusts `Domain BBB`, this means that a user on BBB can be authorised to access resources on AAA:
 
-![Trusts](https://cdn-images.tryhackme.com/user-uploads/5ed5961c6276df568891c3ea/room-content/af95eb1a4b6c672491d8989f79c00200.png)
+<img width="963" height="386" alt="image" src="https://github.com/user-attachments/assets/c5cb9f52-9ee2-4947-af7d-f87c0541a137" />
+
 
 The direction of the one-way trust relationship is contrary to that of the access direction.
 
@@ -516,6 +547,9 @@ It is important to note that having a trust relationship between domains doesn't
 *Q2) What should be configured between two domains for a user in Domain A to access a resource in Domain B?*
 
 **ANSWER:** `A Trust Relationship`
+
+
+
 
 
 
