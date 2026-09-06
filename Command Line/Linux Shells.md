@@ -392,8 +392,6 @@ A user has a locker in a bank. To secure the locker, we have to have a script in
 - Company name: Tryhackme
 - PIN: 7385
 
-![A locker asking to enter username, company name, and pin.](https://cdn-images.tryhackme.com/user-uploads/6645aa8c024f7893371eb7ac/room-content/6645aa8c024f7893371eb7ac-1726143779906.png)
-
 ## Script
 
 ```shell
