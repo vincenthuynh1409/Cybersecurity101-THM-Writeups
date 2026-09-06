@@ -1,5 +1,7 @@
 # Windows Command Line
 
+> *** Needs Walkthrough lol!!!
+
 ## Introduction
 
 Everyone prefers a graphical user interface (GUI) until they master a command-line interface (CLI). There are many reasons for that. One reason is that GUIs are usually intuitive. If someone offers you a GUI interface you are unfamiliar with, you can quickly poke around and discover a non-trivial part. Compare this with dealing with a CLI, i.e., a prompt.
