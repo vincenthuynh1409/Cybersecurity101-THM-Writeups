@@ -1,421 +1,241 @@
 # Networking Secure Protocols
 
-## DNS
+## TLS
 
-Do you remember the IP addresses of your favourite websites? Unless it is a private IP address of a local device, no one needs to worry about memorizing IP addresses. This is in part due to the Domain Name System (DNS), which is responsible for properly mapping a domain name to an IP address.
+At one point, you would only need a packet-capturing tool to read all the chats, emails, and passwords of the users on your network. It was not uncommon for an attacker to set their network card in promiscuous mode, i.e., to capture all packets, including those not destined to it. They would later go through all the packet captures and obtain the login credentials of unsuspecting victims. There was nothing a user could do to prevent their login password from being sent in cleartext. Nowadays, it has become uncommon to come across a service that sends login credentials in cleartext.
 
-DNS operates at the Application Layer, i.e., Layer 7 of the ISO OSI model. DNS traffic uses UDP port 53 by default and TCP port 53 as a default fallback. There are many types of DNS records; however, in this task, we will focus on the following four:
+In the early 1990s, Netscape Communications recognised the need for secure communication on the World Wide Web. They eventually developed SSL (Secure Sockets Layer) and released SSL 2.0 in **1995** as the first public version. In **1999**, the Internet Engineering Task Force (IETF) developed TLS (Transport Layer Security). Although very similar, TLS 1.0 was an upgrade to SSL 3.0 and offered various improved security measures. In **2018**, TLS had a significant overhaul of its protocol and TLS 1.3 was released. The purpose is not to remember the exact dates but to realise the amount of work and time put into developing the current version of TLS, i.e., TLS 1.3. Over more than two decades, there have been many things to learn from and improve with every version.
 
-- **A record**: The A (Address) record maps a hostname to one or more IPv4 addresses. For example, you can set `example.com` to resolve to `172.17.2.172`.
-- **AAAA Record**: The AAAA record is similar to the A Record, but it is for IPv6. Remember that it is AAAA (quad-A), as AA and AAA would refer to a battery size; furthermore, AAA refers to _Authentication, Authorization, and Accounting_; neither falls under DNS.
-- **CNAME Record**: The CNAME (Canonical Name) record maps a domain name to another domain name. For example, `www.example.com` can be mapped to `example.com` or even to `example.org`.
-- **MX Record**: The MX (Mail Exchange) record specifies the mail server responsible for handling emails for a domain.
+Like SSL, its predecessor, TLS is a cryptographic protocol operating at the OSI model’s transport layer. It allows secure communication between a client and a server over an insecure network. By secure, we refer to confidentiality and integrity; TLS ensures that no one can read or modify the exchanged data. Please take a minute to think about what it would be like to do online shopping, online banking, or even online messaging and email without being able to guarantee the confidentiality and integrity of the network packets. Without TLS, we would be unable to use the Internet for many applications that are now part of our daily routine.
 
-In other words, when you type `example.com` in your browser, your browser tries to resolve this domain name by querying the DNS server for the A record. However, when you try to send an email to `test@example.com`, the mail server would query the DNS server to find the MX record.
+Nowadays, tens of protocols have received security upgrades with the simple addition of TLS. Examples include HTTP, DNS, MQTT, and SIP, which have become HTTPS, DoT (DNS over TLS), MQTTS, and SIPS, where the appended “S” stands for Secure due to the use of SSL/TLS. In the following tasks, we will visit HTTPS, SMTPS, POP3S, and IMAPS.
 
-If you want to look up the IP address of a domain from the command line, you can use a tool such as `nslookup`. Consider the example in the terminal below where we look up `example.com`.
+### Technical Background
 
-Terminal
+We will not discuss the TLS handshake; however, if you are curious, you can check the [Network Security Protocols](https://tryhackme.com/r/room/networksecurityprotocols) room. We will give a general overview of how TLS is set up and used.
 
-```shell-session
-user@TryHackMe$ nslookup www.example.com
-Server:         127.0.0.53
-Address:        127.0.0.53#53
+The first step for every server (or client) that needs to identify itself is to get a signed TLS certificate. Generally, the server administrator creates a Certificate Signing Request (CSR) and submits it to a Certificate Authority (CA); the CA verifies the CSR and issues a digital certificate. Once the (signed) certificate is received, it can be used to identify the server (or the client) to others, who can confirm the validity of the signature. For a host to confirm the validity of a signed certificate, the certificates of the signing authorities need to be installed on the host. In the non-digital world, this is similar to recognising the stamps of various authorities. The screenshot below shows the trusted authorities installed in a web browser.
 
-Non-authoritative answer:
-Name:   www.example.com
-Address: 93.184.215.14
-Name:   www.example.com
-Address: 2606:2800:21f:cb07:6820:80da:af6b:8b2c
-```
+![Certificate authorities installed by default on a web browser](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1721903285393.png)  
 
-The query above led to four packets. In the terminal below, we can see that the first and third packets send DNS queries for the A and AAAA records, respectively. The second and fourth packets show the DNS query responses.
+Generally speaking, getting a certificate signed requires paying an annual fee. However, [Let’s Encrypt(opens in new tab)](https://letsencrypt.org/) allows you to get your certificate signed for free.
 
-Terminal
-
-```shell-session
-user@TryHackMe$ tshark -r dns-query.pcapng -Nn
-    1 0.000000000 192.168.66.89 → 192.168.66.1 DNS 86 Standard query 0x2e0f A www.example.com OPT
-    2 0.059049584 192.168.66.1 → 192.168.66.89 DNS 102 Standard query response 0x2e0f A www.example.com A 93.184.215.14 OPT
-    3 0.059721705 192.168.66.89 → 192.168.66.1 DNS 86 Standard query 0x96e1 AAAA www.example.com OPT
-    4 0.101568276 192.168.66.1 → 192.168.66.89 DNS 114 Standard query response 0x96e1 AAAA www.example.com AAAA 2606:2800:21f:cb07:6820:80da:af6b:8b2c OPT
-```
+Finally, we should mention that some users opt to create a self-signed certificate. A self-signed certificate cannot prove the server’s authenticity as no third party has confirmed it.
 
 ### Task 2 Questions:
 
-*Q1) Which DNS record type refers to IPv6?*
+*Q1) What is the protocol name that TLS upgraded and built upon?*
 
 **ANSWER:**
 
-*Q2) Which DNS record type refers to the email server?*
+*Q2) Which type of certificates should not be used to confirm the authenticity of a server?*
 
 **ANSWER:**
 
 
 
-## WHOIS
+## HTTP
 
-In the previous task, we covered how a domain name is resolved into an IP address. However, for this to happen, someone needs to have the authority to set the A, AAAA, and MX records, among other DNS records for the domain. Whoever registers a domain name is granted this power. Therefore, if you register example.com, you can set any valid DNS records for example.com.
+### HTTP
 
-You can register any available domain name for one or more years. You need to pay the annual fee, and you are required to provide [accurate contact information(opens in new tab)](https://www.icann.org/resources/pages/whois-data-accuracy-2017-06-20-en) as the registrant. This information is part of the data available via WHOIS records and is available publicly. (Although written in uppercase, WHOIS is not an acronym; it is pronounced _who is_.) However, don’t worry if you want to register a domain without revealing your contact information publicly; you can use one of the privacy services that hide all your information from the WHOIS records.
+As we studied in the [Networking Core Protocols](https://tryhackme.com/r/room/networkingcoreprotocols) room, HTTP relies on TCP and uses port 80 by default. We also saw how all HTTP traffic was sent in cleartext for anyone to intercept and monitor. The screenshot below is from the previous room, and it gives a clear idea of how an adversary can easily read all the traffic exchanged between the client and the server.
 
-You can look up the WHOIS records of any registered domain name using one of the online services or via the command-line tool `whois`, available on Linux systems, among others. As expected, a WHOIS record provides information about the entity that registered a domain name, including name, phone number, email, and address. In the screenshot shown below, you can see when the record was first created and when it was last updated. Moreover, you can find the registrant’s name, address, phone, and email.
+![Wireshark displaying assembled plaintext HTTP request and response.](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1721903308261.png)
 
-![Example WHOIS record](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1719849535407.png)  
+Let’s take a minute to review the most common steps before a web browser can request a page over HTTP. After resolving the domain name to an IP address, the client will carry out the following two steps:
 
-In the terminal output below, we have used the `whois` command to look up a domain whose WHOIS record is protected by privacy protection.
+1. Establish a TCP three-way handshake with the target server
+2. Communicate using the HTTP protocol; for example, issue HTTP requests, such as `GET / HTTP/1.1`
 
-Terminal
+The two steps described above are shown in the window below. The three packets for the TCP handshake (marked with 1) precede the first HTTP packet with `GET` in it. The HTTP communication is marked with 2. The last three displayed packets are for TCP connection termination and are marked with 3.
 
-```shell-session
-user@TryHackMe$ whois [REDACTED].com
-[...]
-Domain Name: [REDACTED].COM
-Registry Domain ID: [REDACTED]
-Registrar WHOIS Server: whois.godaddy.com
-Registrar URL: https://www.godaddy.com
-Updated Date: 2017-07-05T16:02:43Z
-Creation Date: 1993-04-02T00:00:00Z
-Registrar Registration Expiration Date: 2026-10-20T14:56:17Z
-Registrar: GoDaddy.com, LLC
-Registrar IANA ID: 146
-Registrar Abuse Contact Email: abuse@godaddy.com
-Registrar Abuse Contact Phone: +1.4806242505
-[...]
-Registrant Name: Registration Private
-Registrant Organization: Domains By Proxy, LLC
-Registrant Street: DomainsByProxy.com
-[...]
-```
+![Wireshark displaying a TCP connection getting established, HTTP request sent and response received, and the TCP connection getting terminated.](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1721903373648.png)
+
+### HTTP Over TLS
+
+HTTPS stands for Hypertext Transfer Protocol Secure. It is basically HTTP over TLS. Consequently, requesting a page over HTTPS will require the following three steps (after resolving the domain name):
+
+1. Establish a TCP three-way handshake with the target server
+2. Establish a TLS session
+3. Communicate using the HTTP protocol; for example, issue HTTP requests, such as `GET / HTTP/1.1`
+
+The screenshot below shows that a TCP session is established in the first three packets, marked with `1`. Then, several packets are exchanged to negotiate the TLS protocol, marked with `2`. `1` and `2` are where the **TLS negotiation and establishment** take place.
+
+Finally, HTTP application data is exchanged, marked with `3`. Looking at the Wireshark screenshot, we see that it says “Application Data” because there is no way to know if it is indeed HTTP or some other protocol sent over port 443.
+
+![Wireshark displaying a TCP connection getting established, a TLS session getting established, and encrypted application data](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1721903449717.png)
+
+As expected, if one tries to follow the stream of packets and combine all their contents, they will only get gibberish, as shown in the screenshot below. The exchanged traffic is encrypted; the red is sent by the client, and the blue is sent by the server. There is no way to know the contents without acquiring the encryption key.
+
+![Wireshark displaying assembled encrypted HTTPS traffic](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1721903354908.png)
+
+### Getting the Encryption Key
+
+Adding TLS to HTTP leads to all the packets being encrypted. We can no longer see the contents of the exchanged packets unless we get access to the private key. Although it is improbable that we will have access to the keys used for encryption in a TLS session, we repeated the above screenshots after providing the decryption key to Wireshark. The TCP and TLS handshakes don’t change; the main difference starts with the HTTP protocol marked 3. For instance, we can see when the client issues a `GET`.
+
+![Wireshark displaying a TCP connection getting established, a TLS session getting established, and HTTP request sent and response received.](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1729689224251.png)
+
+If you want to see the data exchanged, now is your chance! It is still regular HTTP traffic hidden from prying eyes.
+
+![Wireshark displaying assembled HTTPS request and response after decryption](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1721903477148.png)
+
+The key takeaway is that TLS offered security for HTTP without requiring any changes in the lower or higher layer protocols. In other words, TCP and IP were not modified, while HTTP was sent over TLS the way it would be sent over TCP.
 
 ### Task 3 Questions:
 
-*Q1) When was the x.com record created? Provide the answer in YYYY-MM-DD format.*  
+*Q1) How many packets did the TLS negotiation and establishment take in the Wireshark HTTPS screenshots above?*  
 
 **ANSWER:**
 
-*Q2) When was the twitter.com record created? Provide the answer in YYYY-MM-DD format.*
+Q2) What is the number of the packet that contain the `GET /login` when accessing the website over HTTPS?
 
 **ANSWER:**
 
 
 
-## HTTP(S)
+## SMTPS, POP3S, & MAPS
 
-When you fire up your browser, you mainly use HTTP and HTTPS protocols. HTTP stands for Hypertext Transfer Protocol; the S in HTTPS stands for Secure. This protocol relies on TCP and defines how your web browser communicates with the web servers.
+Adding TLS to SMTP, POP3, and IMAP is no different than adding TLS to HTTP. Similar to how HTTP gets an appended S for _Secure_ and becomes HTTPS, SMTP, POP3, and IMAP become SMTPS, POP3S, and IMAPS, respectively. Using these protocols over TLS is no different than using HTTP over TLS; therefore, almost all the points from the HTTPS discussion apply to these protocols.
 
-Some of the commands or methods that your web browser commonly issues to the web server are:
+The insecure versions use the default TCP port numbers shown in the table below:
 
-- `GET` retrieves data from a server, such as an HTML file or an image.
-- `POST` allows us to submit new data to the server, such as submitting a form or uploading a file.
-- `PUT` is used to create a new resource on the server and to update and overwrite existing information.
-- `DELETE`, as the name suggests, is used to delete a specified file or resource on the server.
+|Protocol|Default Port Number|
+|---|---|
+|HTTP|80|
+|SMTP|25|
+|POP3|110|
+|IMAP|143|
 
-HTTP and HTTPS commonly use TCP ports 80 and 443, respectively, and less commonly other ports such as 8080 and 8443.
+The secure versions, i.e., over TLS, use the following TCP port numbers by default:
 
-In the following example, we use our Firefox browser to access the web server on `MACHINE_IP`. Our browser fetches the web page and displays it perfectly; however, we are interested in what happens behind the scenes.
+|Protocol|Default Port Number|
+|---|---|
+|HTTPS|443|
+|SMTPS|465 and 587|
+|POP3S|995|
+|IMAPS|993|
 
-![Example website as displayed in a web browser.](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1719849564795.png)  
-
-Using Wireshark, we can examine the exchange between the Firefox browser and the web server more closely. The screenshot below from Wireshark shows the text sent by our browser in **red** and the web server response in **blue**. As you can tell, a lot of information is exchanged between the client and the server that does not get rendered to the user. Examples include the web server version and when the page was last modified.
-
-![The data exchanged between the web browser and the web server as captured by Wireshark.](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1719849586345.png)  
-
-As you remember from [Networking Concepts](https://tryhackme.com/r/room/networkingconcepts), we used the `telnet` client to connect to the web server running on `MACHINE_IP` at port `80`. We had to send a couple of lines: `GET / HTTP/1.1` and `Host: anything` to get the page we wanted. (On some servers, you might get the file without sending `Host: anything`.) You can use this method to access any page and not just the default page `/`. To get `file.html`, you would send `GET /file.html HTTP/1.1`, for instance (`GET /file.html` might work depending on the web server in use). This approach is efficient for troubleshooting as you would be “talking HTTP” with the server.
+TLS can be added to many other protocols; the reasoning and advantages would be similar.
 
 ### Task 4 Questions:
 
-*Q1) Use `telnet` to access the file `flag.html` on `MACHINE_IP`. What is the hidden flag?*
+*Q1) If you capture network traffic, in which of the following protocols can you extract login credentials: SMTPS, POP3S, or IMAP?*
+
+**ANSWER:**
+
+
+## SSH
+
+We have used the TELNET protocol in the [Networking Concepts](https://tryhackme.com/r/room/networkingconcepts) room. Although it is very convenient to log in and administer remote systems, it is risky when all the traffic is sent in cleartext. It is easy for anyone monitoring the network traffic to get hold of your login credentials once you use `telnet`. This problem necessitated a solution. Tatu Ylönen developed the Secure Shell (SSH) protocol and released SSH-1 in **1995** as freeware. (Interestingly, it was the same year that Netscape Communications released the SSL 2.0 protocol.) A more secure version, SSH-2, was defined in 1996. In **1999**, the OpenBSD developers released OpenSSH, an open-source implementation of SSH. Nowadays, when you use an SSH client, it is most likely based on OpenSSH libraries and source code.
+
+OpenSSH offers several benefits. We will list a few key points:
+
+- **Secure authentication**: Besides password-based authentication, SSH supports public key and two-factor authentication.
+- **Confidentiality**: OpenSSH provides end-to-end encryption, protecting against eavesdropping. Furthermore, it notifies you of new server keys to protect against man-in-the-middle attacks.
+- **Integrity**: In addition to protecting the confidentiality of the exchanged data, cryptography also protects the integrity of the traffic.
+- **Tunneling**: SSH can create a secure “tunnel” to route other protocols through SSH. This setup leads to a VPN-like connection.
+- **X11 Forwarding**: If you connect to a Unix-like system with a graphical user interface, SSH allows you to use the graphical application over the network.
+
+You would issue the command `ssh username@hostname` to connect to an SSH server. If the username is the same as your logged-in username, you only need `ssh hostname`. Then, you will be asked for a password; however, if public-key authentication is used, you will be logged in immediately.
+
+The screenshot below shows an example of running Wireshark on a remote Kali Linux system. The argument `-X` is required to support running graphical interfaces, for example, `ssh 192.168.124.148 -X`. (The local system needs to have a suitable graphical system installed.)
+
+![After establishing an SSH connection to a remote server, we successfully started Wireshark, an application with a graphical user interface.](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1721903514417.png)
+
+While the TELNET server listens on port 23, the SSH server listens on port 22.
+
+### Task 5 Question:
+
+*Q1) What is the name of the open-source implementation of the SSH protocol?*
 
 **ANSWER:**
 
 
 
-## FTP 
+## SFTP & FTPS
 
-Unlike HTTP, which is designed to retrieve web pages, File Transfer Protocol (FTP) is designed to transfer files. As a result, FTP is very efficient for file transfer, and when all conditions are equal, it can achieve higher speeds than HTTP.
+SFTP stands for SSH File Transfer Protocol and allows secure file transfer. It is part of the SSH protocol suite and shares the same port number, 22. If enabled in the OpenSSH server configuration, you can connect using a command such as `sftp username@hostname`. Once logged in, you can issue commands such as `get filename` and `put filename` to download and upload files, respectively. Generally speaking, SFTP commands are Unix-like and can differ from FTP commands.
 
-Example commands defined by the FTP protocol are:
+SFTP should not be confused with FTPS. You are right to think that FTPS stands for File Transfer Protocol Secure. How is FTPS secured? Yes, you are correct to estimate that it is secured using TLS, just like HTTPS. While FTP uses port 21, FTPS usually uses port 990. It requires certificate setup, and it can be tricky to allow over strict firewalls as it uses separate connections for control and data transfer.
 
-- `USER` is used to input the username
-- `PASS` is used to enter the password
-- `RETR` (retrieve) is used to download a file from the FTP server to the client.
-- `STOR` (store) is used to upload a file from the client to the FTP server.
+Setting up an SFTP server is as easy as enabling an option within the OpenSSH server. Like HTTPS, SMTPS, POP3S, IMAPS, and other protocols that rely on TLS for security, FTPS requires a proper TLS certificate to run securely.
 
-FTP server listens on TCP port 21 by default; data transfer is conducted via another connection from the client to the server.
+### Task 6 Question:
 
-In the terminal below we executed the command `ftp MACHINE_IP` to connect to the remote FTP server using the local `ftp` client. Then we went through the following steps:
-
-- We used the username `anonymous` to log in
-- We didn’t need to provide any password
-- Issuing `ls` returned a list of files available for download
-- `type ascii` switched to ASCII mode as this is a text file
-- `get coffee.txt` allowed us to retrieve the file we want
-
-The command exchange via the FTP client is shown in the terminal below.
-
-Terminal
-
-```shell-session
-user@TryHackMe$ ftp MACHINE_IP
-Connected to MACHINE_IP (MACHINE_IP).
-220 (vsFTPd 3.0.5)
-Name (MACHINE_IP:strategos): anonymous
-331 Please specify the password.
-Password:
-230 Login successful.
-Remote system type is UNIX.
-Using binary mode to transfer files.
-ftp> ls
-227 Entering Passive Mode (10,10,41,192,134,10).
-150 Here comes the directory listing.
--rw-r--r--    1 0        0            1480 Jun 27 08:03 coffee.txt
--rw-r--r--    1 0        0              14 Jun 27 08:04 flag.txt
--rw-r--r--    1 0        0            1595 Jun 27 08:05 tea.txt
-226 Directory send OK.
-ftp> type ascii
-200 Switching to ASCII mode.
-ftp> get coffee.txt
-local: coffee.txt remote: coffee.txt
-227 Entering Passive Mode (10,10,41,192,57,100).
-150 Opening BINARY mode data connection for coffee.txt (1480 bytes).
-WARNING! 47 bare linefeeds received in ASCII mode
-File may not have transferred correctly.
-226 Transfer complete.
-1480 bytes received in 8e-05 secs (18500.00 Kbytes/sec)
-ftp> quit
-221 Goodbye.
-```
-
-We used Wireshark to examine the exchanged messages more closely. The client’s messages are in **red**, while the server’s responses are in **blue**. Notice how various commands differ between the client and the server. For example, when you type `ls` on the client, the client sends `LIST` to the server. One last thing to note is that the directory listing and the file we downloaded are sent over a separate connection each.
-
-![The data exchanged between the FTP client and the FTP server as captured by Wireshark.](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1719849609513.png)
-
-### Task 5 Questions:
-
-*Q1) Using the FTP client `ftp` on the AttackBox, access the FTP server at `MACHINE_IP` and retrieve `flag.txt`. What is the flag found?*
+*Q1) Click on the **View Site** button to access the related site. Please follow the instructions on the site to obtain the flag.*
 
 **ANSWER:**
 
 
 
-## SMTP
+## VPN
 
-As with browsing the web and downloading files, sending email needs its own protocol. Simple Mail Transfer Protocol (SMTP) defines how a mail client talks with a mail server and how a mail server talks with another.
+Consider a company with offices in different geographical locations. Can this company connect all its offices and sites to the main branch so that any device can access the shared resources as if physically located in the main branch? The answer is yes; furthermore, the most economical solution would be setting up a virtual private network (VPN) using the Internet infrastructure. The focus here is on the V for Virtual in VPN.
 
-The analogy for the SMTP protocol is when you go to the local post office to send a package. You greet the employee, tell them where you want to send your package, and provide the sender’s information before handing them the package. Depending on the country you are in, you might be asked to show your identity card. This process is not very different from an SMTP session.
+When the Internet was designed, the TCP/IP protocol suite focused on delivering packets. For example, if a router gets out of service, the routing protocols can adapt and pick a different route to send their packets. If a packet was not acknowledged, TCP has built-in mechanisms to detect this situation and resend. However, no mechanisms are in place to ensure that **all data** leaving or entering a computer is protected from disclosure and alteration. A popular solution was the setup of a VPN connection. The focus here is on the P for Private in VPN.
 
-Let’s present some of the commands used by your mail client when it transfers an email to an SMTP server:
+Almost all companies require “private” information exchange in their virtual network. So, a VPN provides a very convenient and relatively inexpensive solution. The main requirements are Internet connectivity and a VPN server and client.
 
-- `HELO` or `EHLO` initiates an SMTP session
-- `MAIL FROM` specifies the sender’s email address
-- `RCPT TO` specifies the recipient’s email address
-- `DATA` indicates that the client will begin sending the content of the email message
-- `.` is sent on a line by itself to indicate the end of the email message  
-    
+The network diagram below shows an example of a company with two remote branches connecting to the main branch. A VPN client in the remote branches is expected to connect to the VPN server in the main branch. In this case, the VPN client will encrypt the traffic and pass it to the main branch via the established VPN tunnel (shown in blue). The VPN traffic is limited to the blue lines; the green lines would carry the decrypted VPN traffic.
 
-The terminal below shows an example of an email sent via `telnet`. The SMTP server listens on TCP port 25 by default.
+![A network diagram showing two remote company branches connecting to the main branch over VPN.](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1721903538365.svg)
 
-Terminal
+In the network diagram below, we see two remote users using VPN clients to connect to the VPN server in the main branch. In this case, the VPN client connects a single device.
 
-```shell-session
-user@TryHackMe$ telnet MACHINE_IP 25
-Trying MACHINE_IP...
-Connected to MACHINE_IP.
-Escape character is '^]'.
-220 example.thm ESMTP Exim 4.95 Ubuntu Thu, 27 Jun 2024 16:18:09 +0000
-HELO client.thm
-250 example.thm Hello client.thm [10.11.81.126]
-MAIL FROM: <user@client.thm>
-250 OK
-RCPT TO: <strategos@server.thm>
-250 Accepted
-DATA
-354 Enter message, ending with "." on a line by itself
-From: user@client.thm
-To: strategos@server.thm
-Subject: Telnet email
+![A network diagram showing two remote employees with laptops connecting to the main branch over VPN](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1721903568757.svg)
 
-Hello. I am using telnet to send you an email!
-.
-250 OK id=1sMrpq-0001Ah-UT
-QUIT
-221 example.thm closing connection
-Connection closed by foreign host.
-```
+Once a VPN tunnel is established, all our Internet traffic will usually be routed over the VPN connection, i.e. via the VPN tunnel. Consequently, when we try to access an Internet service or web application, they will not see our public IP address but the VPN server’s. This is why some Internet users connect over VPN to circumvent geographical restrictions. Furthermore, the local ISP will only see encrypted traffic, which limits its ability to censor Internet access.
 
-Obviously, sending an email using `telnet` is quite cumbersome; however, it helps you better understand the commands that your email client issues under the hood. The Wireshark capture shows the exchange in colours; the client’s messages are in red, while the server’s responses are in blue.
+In other words, if a user connects to a VPN server in Japan, they will appear to the servers they access as if located in Japan. These servers will customise their experience accordingly, such as redirecting them to the Japanese version of the service. The screenshot below shows the Google Search page after connecting to a VPN server in Japan.
 
-![The data exchanged between the client and the SMTP server as captured by Wireshark.](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1719849634602.png)  
+![After we established a VPN connection to a VPN server in Japan, we visited Google Search and it was automatically displayed in Japanese language.](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1721903553939.png)
 
-Now that we have covered some basic HTTP, FTP, and SMTP commands, you should have gained a solid understanding of how protocols are designed and used. It should be effortless to learn how other text-based protocols, such as POP3 and IMAP, work.
+Finally, although in many scenarios, one would establish a VPN connection to route all the traffic over the VPN tunnel, some VPN connections don’t do this. The VPN server may be configured to give you access to a private network but not to route your traffic. Furthermore, some VPN servers leak your actual IP address, although they are expected to route all your traffic over the VPN. Depending on why you are using a VPN connection, you might need to run a few more tests, such as a DNS leak test.
 
-### Task 6 Questions:
-
-*Q1) Which SMTP command indicates that the client will start the contents of the email message?*
-
-**ANSWER:**
-
-*Q2) What does the email client send to indicate that the email message has been fully entered?*
-
-**ANSWER:**
-
-
-
-## POP3
-
-You’ve received an email and want to download it to your local mail client. The Post Office Protocol version 3 (POP3) is designed to allow the client to communicate with a mail server and retrieve email messages.
-
-Without going into in-depth technical details, an email client sends its messages by relying on SMTP and retrieves them using POP3. SMTP is similar to handing your envelope or package to the post office, and POP3 is similar to checking your local mailbox for new letters or packages.
-
-![POP3 is like a personal mailbox. SMTP is like the Post Office designated box.](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1726733700701.svg)  
-
-Some common POP3 commands are:
-
-- `USER <username>` identifies the user
-- `PASS <password>` provides the user’s password
-- `STAT` requests the number of messages and total size
-- `LIST` lists all messages and their sizes
-- `RETR <message_number>` retrieves the specified message
-- `DELE <message_number>` marks a message for deletion
-- `QUIT` ends the POP3 session applying changes, such as deletions
-
-In the terminal below, we can see a POP3 session over telnet. Since the POP3 server listens on TCP port 110 by default, the command to connect to the TELNET port is `telnet MACHINE_IP 110`. The exchange below retrieves the email message sent in the previous task.
-
-Terminal
-
-```shell-session
-user@TryHackMe$ telnet MACHINE_IP 110
-Trying MACHINE_IP...
-Connected to MACHINE_IP.
-Escape character is '^]'.
-+OK [XCLIENT] Dovecot (Ubuntu) ready.
-AUTH
-+OK
-PLAIN
-.
-USER strategos
-+OK
-PASS 
-+OK Logged in.
-STAT
-+OK 3 1264
-LIST
-+OK 3 messages:
-1 407
-2 412
-3 445
-.
-RETR 3
-+OK 445 octets
-Return-path: <user@client.thm>
-Envelope-to: strategos@server.thm
-Delivery-date: Thu, 27 Jun 2024 16:19:35 +0000
-Received: from [10.11.81.126] (helo=client.thm)
-        by example.thm with smtp (Exim 4.95)
-        (envelope-from <user@client.thm>)
-        id 1sMrpq-0001Ah-UT
-        for strategos@server.thm;
-        Thu, 27 Jun 2024 16:19:35 +0000
-From: user@client.thm
-To: strategos@server.thm
-Subject: Telnet email
-
-Hello. I am using telnet to send you an email!
-.
-QUIT
-+OK Logging out.
-Connection closed by foreign host.
-```
-
-Someone capturing the network packets would be able to intercept the exchanged traffic. As per previous Wireshark captures, the commands in red are sent by the client, and the lines in blue are the server’s. It is also clear that someone capturing the traffic can read the passwords.
-
-![The data exchanged between the client and the POP3 server as captured by Wireshark.](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1719849655900.png)  
-
-Connecting to a POP3 server requires authentication. Use the following login credentials when needed:
-
-- Username: `linda`
-- Password: `Pa$$123`
+Finally, some countries consider using VPNs illegal and even punishable. Please check the local laws and regulations before using VPNs, especially while travelling.
 
 ### Task 7 Questions:
 
-*Q1) Looking at the traffic exchange, what is the name of the POP3 server running on the remote server?*
-
-**ANSWER:**
-
-*Q2) Use `telnet` to connect to `MACHINE_IP`’s POP3 server. What is the flag contained in the fourth message?*
+*Q1) What would you use to connect the various company sites so that users at a remote office can access resources located within the main branch?*
 
 **ANSWER:**
 
 
 
-## IMAP 
+## Conclusion & Practical Exercise
 
-POP3 is enough when working from one device, e.g., your favourite email client on your desktop computer. However, what if you want to check your email from your office desktop computer and from your laptop or smartphone? In this scenario, you need a protocol that allows synchronization of messages instead of deleting a message after retrieving it. One solution to maintaining a synchronized mailbox across multiple devices is Internet Message Access Protocol (IMAP).
+In this room, we covered three main approaches to secure network traffic.
 
-IMAP allows synchronizing read, moved, and deleted messages. IMAP is quite convenient when you check your email via multiple clients. Unlike POP3, which tends to minimize server storage as email is downloaded and deleted from the remote server, IMAP tends to use more storage as email is kept on the server and synchronized across the email clients.
+The first approach is to use TLS, which provides a convenient way to secure many protocols, such as HTTP, SMTP, and POP3. Protocols secured with TLS usually get an S, for _Secure_, added to their names, such as HTTPS, SMTPS, and POP3S.
 
-The IMAP protocol commands are more complicated than the POP3 protocol commands. We list a few examples below:
+The second approach to secure network traffic is to use SSH. Although SSH is mainly used for remote access, it can also transfer files securely and establish secure tunnels. Creating an SSH tunnel is a solid choice if you want to pass the traffic of a plaintext protocol, such as VNC.
 
-- `LOGIN <username> <password>` authenticates the user
-- `SELECT <mailbox>` selects the mailbox folder to work with
-- `FETCH <mail_number> <data_item_name>` Example `fetch 3 body[]` to fetch message number 3, header and body.
-- `MOVE <sequence_set> <mailbox>` moves the specified messages to another mailbox
-- `COPY <sequence_set> <data_item_name>` copies the specified messages to another mailbox
-- `LOGOUT` logs out
+The last approach we covered to secure network traffic is using VPN connections. A VPN connection is usually the perfect option for connecting two company branches.
 
-Knowing that the IMAP server listens on TCP port 143 by default, we will use `telnet` to connect to `MACHINE_IP`’s port 143 and fetch the message we sent in an earlier task.
+We will finish this room with a hands-on challenge.
 
-Terminal
+### Challenge
 
-```shell-session
-user@TryHackMe$ telnet 10.10.41.192 143
-Trying 10.10.41.192...
-Connected to 10.10.41.192.
-Escape character is '^]'.
-* OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ STARTTLS AUTH=PLAIN] Dovecot (Ubuntu) ready.
-A LOGIN strategos
-A OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND URL-PARTIAL CATENATE UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS BINARY MOVE SNIPPET=FUZZY PREVIEW=FUZZY PREVIEW STATUS=SIZE SAVEDATE LITERAL+ NOTIFY SPECIAL-USE] Logged in
-B SELECT inbox
-* FLAGS (\Answered \Flagged \Deleted \Seen \Draft)
-* OK [PERMANENTFLAGS (\Answered \Flagged \Deleted \Seen \Draft \*)] Flags permitted.
-* 4 EXISTS
-* 0 RECENT
-* OK [UNSEEN 2] First unseen.
-* OK [UIDVALIDITY 1719824692] UIDs valid
-* OK [UIDNEXT 5] Predicted next UID
-B OK [READ-WRITE] Select completed (0.001 + 0.000 secs).
-C FETCH 3 body[]
-* 3 FETCH (BODY[] {445}
-Return-path: <user@client.thm>
-Envelope-to: strategos@server.thm
-Delivery-date: Thu, 27 Jun 2024 16:19:35 +0000
-Received: from [10.11.81.126] (helo=client.thm)
-        by example.thm with smtp (Exim 4.95)
-        (envelope-from <user@client.thm>)
-        id 1sMrpq-0001Ah-UT
-        for strategos@server.thm;
-        Thu, 27 Jun 2024 16:19:35 +0000
-From: user@client.thm
-To: strategos@server.thm
-Subject: Telnet email
+Press the **Start Lab Machine** button below.
 
-Hello. I am using telnet to send you an email!
-)
-C OK Fetch completed (0.001 + 0.000 secs).
-D LOGOUT
-* BYE Logging out
-D OK Logout completed (0.001 + 0.000 secs).
-Connection closed by foreign host.
-```
+The machine will start in Split-Screen view. If it is not visible, use the blue **Show Split View** button at the top of the page.
 
-The screenshot below shows the exchanged messages between the client and the server as seen from Wireshark. The client only needed to send four commands, shown in red, and the “long” server responses are shown in blue.
+We have set the browser to log the session’s TLS keys so we can take a closer look at the traffic using Wireshark. This logging was achieved by adding an extra option to the browser shortcut. Executing `chromium --ssl-key-log-file=~/ssl-key.log` dumps the TLS keys to the `ssl-key.log` file.
 
-![The data exchanged between the client and the IMAP server as captured by Wireshark.](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1719849677604.png)  
+The packet capture file is called `randy-chromium.pcapng` and is saved in the `Documents` folder. When you open the packet capture file in Wireshark, you can configure Wireshark to use the `ssl-key.log` file so that all the TLS traffic gets decrypted. You can see the five steps to achieve this in the two screenshots below.
+
+First, after right-clicking any TLS packet, choose “Protocol Preferences.” From the submenu, select “Transport Layer Security.” Thirdly, click on “Open Transport Layer Security preferences.”
+
+![Click on Protocol Preferences, then click on Transport Layer Security, and finally click on Open Transport Layer Security preferences.](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1726165322572.png)
+
+Clicking “Open Transport Layer Security preferences” will show a dialog box. You must click the “Browse” button marked with four to locate the `ssl-key.log`. You can find it in the `Documents` directory. Finally, click OK, and Wireshark will show all the TLS decrypted. One of these packets contains login credentials.
+
+![Click on Browse, then select the ssl-key.log file, and finally click OK.](https://cdn-images.tryhackme.com/user-uploads/5f04259cf9bf5b57aed2c476/room-content/5f04259cf9bf5b57aed2c476-1726165340490.png)
 
 ### Task 8 Questions:
 
-*Q1) What IMAP command retrieves the fourth email message?*
+*Q1) One of the packets contains login credentials. What password did the user submit?*
 
 **ANSWER:**
+
 
