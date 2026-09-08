@@ -63,7 +63,7 @@ Q3) What is the source IP address a client uses when trying to get IP network co
 
 **ANSWER:**
 
-
+<br>
 
 ## ARP 
 
@@ -117,6 +117,7 @@ ARP is considered layer 2 because it deals with MAC addresses. Others would argu
 
 **ANSWER:**
 
+<br>
 
 ## ICMP
 
@@ -198,7 +199,7 @@ Q2) Which IP header field does the `traceroute` command require to become zero
 
 **ANSWER:**
 
-
+<br>
 
 ## Routing
 
@@ -223,7 +224,7 @@ Q1) Which routing protocol discussed in this task is a Cisco proprietary protoco
 
 **ANSWER:**
 
-
+<br>
 
 ## NAT
 
