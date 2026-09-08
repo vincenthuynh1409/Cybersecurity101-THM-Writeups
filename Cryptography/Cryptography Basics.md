@@ -21,7 +21,7 @@ In the same way that handling payment card details requires complying with PCI D
 
 **ANSWER:**
 
-
+<br>
 
 ## Plaintext to Ciphertext
 
@@ -52,6 +52,7 @@ We have just introduced several new terms, and we need to learn them to understa
 
 **ANSWER:**
 
+<br>
 
 ## Historical Ciphers
 
@@ -93,7 +94,7 @@ Q1) Knowing that `XRPCTCRGNEI` was encrypted using Caesar Cipher, what is the 
 
 **ANSWER:**
 
-
+<br>
 
 ## Types of Encryption
 
@@ -143,7 +144,7 @@ We will visit various asymmetric encryption ciphers in the next room. For now, t
 
 **ANSWER:**
 
-
+<br>
 
 ## Basic Math
 
