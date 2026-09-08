@@ -91,7 +91,7 @@ Knowing the file details is helpful. Especially when working with multiple pcap 
 
 **ANSWER:** 
 
-
+<br>
 
 ## Packet Dissection
 
@@ -182,7 +182,7 @@ See image
 
 **ANSWER:**
 
-
+<br>
 
 ## Packet Navigation
 
@@ -285,7 +285,7 @@ Q4) Look at the expert info section. What is the number of warnings?
 
 **ANSWER:**
 
-
+<br>
 
 ## Packet Filtering
 
