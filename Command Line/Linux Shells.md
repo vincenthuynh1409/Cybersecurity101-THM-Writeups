@@ -14,6 +14,7 @@ You may have seen hacking scenes in movies that show cool terminals with many co
 
 **ANSWER:**
 
+<br>
 
 ## How to Interact with Shell?
 
@@ -104,7 +105,7 @@ The flag is THM
 
 **ANSWER:**
 
-
+<br>
 
 ## Types of Linux Shells
 
@@ -204,6 +205,7 @@ Selecting the best Linux shell depends on your usage and its features. The shell
 
 **ANSWER:**
 
+<br>
 
 ## Shell Scripting & Components
 
@@ -379,12 +381,13 @@ See how easy a script looks with comments. Comments don’t affect the working o
 
 **ANSWER:**
 
+<br>
 
 ## Locker Script
 
 In the previous task, we studied variables, loops, and conditional statements in shell scripting. Let’s use that knowledge to create a shell script that utilizes all these components.
 
-## Requirement
+### Requirement
 
 A user has a locker in a bank. To secure the locker, we have to have a script in place that verifies the user before opening it. When executed, the script should ask the user for their name, company name, and PIN. If the user enters the following details, they should be allowed to enter, or else they should be denied access.
 
@@ -392,7 +395,7 @@ A user has a locker in a bank. To secure the locker, we have to have a script in
 - Company name: Tryhackme
 - PIN: 7385
 
-## Script
+### Script
 
 ```shell
 # Defining the Interpreter 
@@ -448,7 +451,7 @@ Authentication Denied!!
 
 **ANSWER:**
 
-
+<br>
 
 ## Practice Exercise
 
