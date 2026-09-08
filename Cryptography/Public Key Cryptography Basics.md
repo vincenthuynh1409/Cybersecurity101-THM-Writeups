@@ -32,7 +32,7 @@ In reality, you need more cryptography to verify that the person you’re talkin
 
 **ANSWER:**
 
-
+<br>
 
 ## RSA
 
@@ -94,7 +94,7 @@ Crypto CTF challenges often present you with a set of these values, and you need
 
 **ANSWER:**
 
-
+<br>
 
 ## Diffie-Hellman Key Exchange
 
@@ -142,7 +142,7 @@ Q4) Knowing that _p_ = 29, _b_ = 17, and you have _A_ from the first
 
 **ANSWER:**
 
-
+<br>
 
 ## SSH
 
@@ -259,13 +259,14 @@ The `~/.ssh` folder is the default place to store these keys for OpenSSH. The�
 During CTFs, penetration testing, and red teaming exercises, SSH keys are an excellent way to “upgrade” a reverse shell, assuming the user has login enabled. Note that www-data usually does not allow this, but regular users and root will work. Leaving an SSH key in the `authorized_keys` file on a machine can be a useful backdoor, and you don’t need to deal with any of the issues of unstabilised reverse shells like Control-C or lack of tab completion.
 
 
-## Task 5 Questions:
+
+### Task 5 Questions:
 
 *Q1) Check the SSH Private Key in `~/Public-Crypto-Basics/Task-5`. What algorithm does the key use?*
 
 **ANSWER:**
 
-
+<br>
 
 ## Digital Signatures & Certificates
 
@@ -301,7 +302,7 @@ Let’s say you have a website and want to use HTTPS. This step requires having 
 
 **ANSWER:**
 
-
+<br>
 
 ## PGP & GPG
 
@@ -371,6 +372,7 @@ Let’s say you got a new computer. All you need to do is import your key, and y
 
 **ANSWER:**
 
+<br>
 
 ## Conclusion
 
