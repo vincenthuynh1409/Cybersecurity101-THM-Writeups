@@ -1,6 +1,6 @@
 # Hashing Basics
 
-### What is a Hash Function?
+## What is a Hash Function?
 
 Hash functions are different from encryption. There is no key, and it’s meant to be impossible (or computationally impractical) to go from the output back to the input.
 
@@ -69,7 +69,7 @@ MD5 and SHA1 have been attacked and are now considered insecure due to the abil
 
 **ANSWER:**
 
-
+<br>
 
 ## Insecure Password Storage for Authentication
 
@@ -123,7 +123,7 @@ LinkedIn also suffered a data breach in 2012. LinkedIn used an insecure hashing 
 
 **ANSWER:**
 
-
+<br>
 
 ## Hashing for Secure Password Storage
 
@@ -188,7 +188,7 @@ Considering the problem of saving passwords for authentication, why don’t we e
 
 **ANSWER:**
 
-
+<br>
 
 ## Recognizing Password Hashes
 
@@ -258,6 +258,7 @@ A great place to find more hash formats and password prefixes is the [Hashcat E
 
 **ANSWER:**
 
+<br>
 
 ## Password Cracking
 
@@ -308,7 +309,7 @@ For example, `hashcat -m 3200 -a 0 hash.txt /usr/share/wordlists/rockyou.txt` 
 
 **ANSWER:**
 
-
+<br>
 
 ## Hashing for Integrity Checking
 
@@ -368,7 +369,7 @@ Note that M and K represent the message and the key, respectively.
 
 **ANSWER:**
 
-
+<br>
 
 ## Conclusion:
 
