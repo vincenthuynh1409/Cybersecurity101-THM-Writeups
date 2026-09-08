@@ -51,7 +51,7 @@ user@TryHackMe$ tshark -r dns-query.pcapng -Nn
 
 **ANSWER:**
 
-
+<br>
 
 ## WHOIS
 
@@ -98,7 +98,7 @@ Registrant Street: DomainsByProxy.com
 
 **ANSWER:**
 
-
+<br>
 
 ## HTTP(S)
 
@@ -129,7 +129,7 @@ As you remember from [Networking Concepts](https://tryhackme.com/r/room/network
 
 **ANSWER:**
 
-
+<br>
 
 ## FTP 
 
@@ -197,7 +197,7 @@ We used Wireshark to examine the exchanged messages more closely. The client’s
 
 **ANSWER:**
 
-
+<br>
 
 ## SMTP
 
@@ -260,7 +260,7 @@ Now that we have covered some basic HTTP, FTP, and SMTP commands, you should h
 
 **ANSWER:**
 
-
+<br>
 
 ## POP3
 
@@ -347,7 +347,7 @@ Connecting to a POP3 server requires authentication. Use the following login cre
 
 **ANSWER:**
 
-
+<br>
 
 ## IMAP 
 
