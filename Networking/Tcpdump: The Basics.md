@@ -18,7 +18,7 @@ It uses the following SSH credentials in case you need them:
 
 **ANSWER:**
 
-
+<br>
 
 ## Basic Packet Capture
 
@@ -231,7 +231,7 @@ reading from file traffic.pcap, link-type EN10MB (Ethernet)
 
 **ANSWER:**
 
-
+<br>
 
 ## Advanced Filtering
 
@@ -315,7 +315,7 @@ You can write your own filter depending on what you are looking for.
 
 **ANSWER:**
 
-
+<br>
 
 ## Displaying Packets
 
