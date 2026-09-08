@@ -32,7 +32,7 @@ Finally, we should mention that some users opt to create a self-signed certifica
 
 **ANSWER:**
 
-
+<br>
 
 ## HTTP
 
@@ -91,7 +91,7 @@ Q2) What is the number of the packet that contain the `GET /login` when access
 
 **ANSWER:**
 
-
+<br>
 
 ## SMTPS, POP3S, & MAPS
 
@@ -123,6 +123,7 @@ TLS can be added to many other protocols; the reasoning and advantages would be 
 
 **ANSWER:**
 
+<br>
 
 ## SSH
 
@@ -150,7 +151,7 @@ While the TELNET server listens on port 23, the SSH server listens on port 22.
 
 **ANSWER:**
 
-
+<br>
 
 ## SFTP & FTPS
 
@@ -166,7 +167,7 @@ Setting up an SFTP server is as easy as enabling an option within the OpenSSH se
 
 **ANSWER:**
 
-
+<br>
 
 ## VPN
 
@@ -200,7 +201,7 @@ Finally, some countries consider using VPNs illegal and even punishable. Please 
 
 **ANSWER:**
 
-
+<br>
 
 ## Conclusion & Practical Exercise
 
