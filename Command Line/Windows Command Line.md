@@ -14,19 +14,6 @@ There are many other advantages to using a CLI besides speed and efficiency. We 
 - **Automation**: While you can automate GUI tasks, creating a batch file or script with the commands you need to repeat is much easier.
 - **Remote management**: CLI makes it very convenient to use SSH to manage a remote system such as a server, router, or an IoT device. This approach works well on slow network speeds and systems with limited resources.
 
-## Learning Objectives
-
-The purpose of this room is to teach you how to use MS Windows Command Prompt `cmd.exe`, the default command-line interpreter in the Windows environment. We will learn how to use the command line to:
-
-- Display basic system information
-- Check and troubleshoot network configuration
-- Manage files and folders
-- Check running processes
-
-## Room Prerequisites
-
-Before starting this room, you should have finished the [Windows and AD Fundamentals](https://tryhackme.com/module/windows-and-active-directory-fundamentals) module.
-
 Press the **Start Lab Machine** button below.
 
 Start the AttackBox by pressing the **Start AttackBox** button at the top of this page. The AttackBox machine will start in Split-Screen view. If it is not visible, use the blue **Show Split View** button at the top of the page.
@@ -36,7 +23,7 @@ You can use the SSH client on the AttackBox to connect to `MACHINE_IP` with th
 - Username: `user`
 - Password: `Tryhackme123!`
 
-#### Establishing an SSH Connection from the AttackBox
+### Establishing an SSH Connection from the AttackBox
 
 If this is the first time you initiate an SSH connection from the AttackBox to a target system, the steps are shown in the screenshot below, and they are the following:
 
@@ -53,6 +40,7 @@ If this is the first time you initiate an SSH connection from the AttackBox to a
 
 **ANSWER:** `cmd.exe`
 
+<br>
 
 ## Basic System Information
 
@@ -113,6 +101,7 @@ First, you can pipe it through `more` if the output is too long. Then, you can
 
 **ANSWER:** `WINSRV2022-CORE`
 
+<br>
 
 ## Network Troubleshooting
 
@@ -305,7 +294,7 @@ Active Connections
 
 **ANSWER:** `TermService`
 
-
+<br>
 
 ## File & Disk Management
 
@@ -510,7 +499,7 @@ We can use the wildcard character `*` to refer to multiple files. For example,
 
 **ANSWER:** `THM{CLI_POWER}`
 
-
+<br>
 
 ## Task & Process Management
 
@@ -566,7 +555,7 @@ With the process ID (PID) known, we can terminate any task using `taskkill /PID
 
 **ANSWER:** `taskkill /PID 1516`
 
-
+<br>
 
 ## Conclusion
 
