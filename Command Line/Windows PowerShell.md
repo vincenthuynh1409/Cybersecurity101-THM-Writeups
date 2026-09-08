@@ -32,6 +32,7 @@ We will explore more about PowerShell’s cmdlets and their capabilities in the 
 
 **ANSWER:** `object-oriented`
 
+<br>
 
 ## PowerShell Basics
 
@@ -94,6 +95,8 @@ Cmdlets follow a consistent `Verb-Noun` naming convention. This structure make
 
 - `Get-Content`: Retrieves (gets) the content of a file and displays it in the console.
 - `Set-Location`: Changes (sets) the current working directory.
+
+<br>
 
 ### Basic Cmdlets
 
@@ -254,7 +257,7 @@ With these essential tools in our belt, we can now start exploring PowerShell’
 
 **ANSWER:**
 
-
+<br>
 
 ## Navigating File System & Working with Files
 
@@ -373,6 +376,7 @@ Don't touch my hat!
 
 **ANSWER:**
 
+<br>
 
 ## Piping, Filtering, & Sorting Data
 
@@ -493,7 +497,7 @@ The `Select-String` cmdlet fully supports the use of regular expressions ([reg
 
 **ANSWER:**
 
-
+<br>
 
 ## System & Network Information
 
@@ -608,6 +612,7 @@ These cmdlets give IT professionals the ability to quickly access crucial system
 
 **ANSWER:**
 
+<br>
 
 ## Real-Time System Analysis
 
@@ -719,7 +724,7 @@ These cmdlets collectively provide a comprehensive set of tools for real-time sy
 
 **ANSWER:**
 
-
+<br>
 
 ## Scripting
 
