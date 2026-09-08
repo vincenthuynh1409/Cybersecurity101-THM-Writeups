@@ -110,7 +110,7 @@ Q4) Which layer is responsible for transferring data between hosts on the same n
 
 **ANSWER:**
 
-
+<br>
 
 ## TCP/IP Model
 
@@ -155,7 +155,7 @@ In the following tasks, we will cover the IP protocol from the Internet layer an
 
 **ANSWER:**
 
-
+<br>
 
 ## IP Addresses & Subnets
 
@@ -266,7 +266,7 @@ In technical terms, a router forwards data packets to the proper network. Usuall
 
 **ANSWER:**
 
-
+<br>
 
 ## UDP & TCP
 
@@ -308,6 +308,7 @@ Similar to UDP, TCP identifies the process of initiating or waiting (listening) 
 
 **ANSWER:**
 
+<br>
 
 ## Encapsulation
 
@@ -353,6 +354,7 @@ The steps will then be reversed as the packet reaches the router of the destinat
 
 **ANSWER:**
 
+<br>
 
 ## Telnet
 
