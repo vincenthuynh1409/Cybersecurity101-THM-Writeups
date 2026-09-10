@@ -17,7 +17,17 @@ To find a specific set of notes or lab, simply open the corresponding folder and
 1. [**Start Cybersecurity Journey**](https://github.com/vincenthuynh1409/Cybersecurity101-TryHackMe-Writeups/tree/main/Start%20Cybersecurity%20Journey)
 2. [**Linux Fundamentals**](https://github.com/vincenthuynh1409/Cybersecurity101-TryHackMe-Writeups/tree/main/Linux%20Fundamentals)
 3. [**Windows & Active Directory Fundamentals**](https://github.com/vincenthuynh1409/Cybersecurity101-TryHackMe-Writeups/tree/main/Windows%20%26%20Active%20Directory%20Fundamentals)
-4. 
+4. [**Command Line**](https://github.com/vincenthuynh1409/Cybersecurity101-TryHackMe-Writeups/tree/main/Command%20Line)
+5. [**Networking**](https://github.com/vincenthuynh1409/Cybersecurity101-TryHackMe-Writeups/tree/main/Networking)
+6. [**Cryptography**](https://github.com/vincenthuynh1409/Cybersecurity101-TryHackMe-Writeups/tree/main/Cryptography)
+7. [**Exploitation Basics**](https://github.com/vincenthuynh1409/Cybersecurity101-TryHackMe-Writeups/tree/main/Exploitation%20Basics)
+8. [**Web Hacking**](https://github.com/vincenthuynh1409/Cybersecurity101-TryHackMe-Writeups/tree/main/Web%20Hacking)
+9. [**Offensive Security Tooling**](https://github.com/vincenthuynh1409/Cybersecurity101-TryHackMe-Writeups/tree/main/Offensive%20Security%20Tooling)
+10. [**Defensive Security**](https://github.com/vincenthuynh1409/Cybersecurity101-TryHackMe-Writeups/tree/main/Defensive%20Security)
+11. [**Security Solutions**](https://github.com/vincenthuynh1409/Cybersecurity101-TryHackMe-Writeups/tree/main/Security%20Solutions)
+12. [**Defensive Security Tooling**](https://github.com/vincenthuynh1409/Cybersecurity101-TryHackMe-Writeups/tree/main/Defensive%20Security%20Tooling)
+13. [**Build Your Cybersecurity Career**](https://github.com/vincenthuynh1409/Cybersecurity101-TryHackMe-Writeups/tree/main/Build%20Your%20Cybersecurity%20Career)
+14. [**OWASP Top 10 (2025)**](https://github.com/vincenthuynh1409/Cybersecurity101-TryHackMe-Writeups/tree/main/OWASP%20Top%2010%20(2025))
 
 - - - 
 
