@@ -16,6 +16,8 @@ To find a specific set of notes or lab, simply open the corresponding folder and
 
 1. [**Start Cybersecurity Journey**](https://github.com/vincenthuynh1409/Cybersecurity101-TryHackMe-Writeups/tree/main/Start%20Cybersecurity%20Journey)
 2. [**Linux Fundamentals**](https://github.com/vincenthuynh1409/Cybersecurity101-TryHackMe-Writeups/tree/main/Linux%20Fundamentals)
+3. [**Windows & Active Directory Fundamentals**](https://github.com/vincenthuynh1409/Cybersecurity101-TryHackMe-Writeups/tree/main/Windows%20%26%20Active%20Directory%20Fundamentals)
+4. 
 
 - - - 
 
