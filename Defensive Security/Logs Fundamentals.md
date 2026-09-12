@@ -1,1 +1,0 @@
-# Logs Fundamentals
