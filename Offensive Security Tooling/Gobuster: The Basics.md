@@ -1,1 +1,0 @@
-# Gobuster: The Basics

@@ -1,1 +1,0 @@
-# SQLMap: The Basics
