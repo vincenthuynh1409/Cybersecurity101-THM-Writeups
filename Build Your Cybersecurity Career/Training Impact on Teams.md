@@ -1,1 +1,0 @@
-# Training Impact on Teams
